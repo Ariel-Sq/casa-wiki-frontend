@@ -8,7 +8,7 @@ Diseño basado en el proyecto Stitch *Casa Wiki Furniture Ecommerce* (pantallas 
 
 | Servicio | URL |
 |---|---|
-| Storefront | https://casa-wiki.vercel.app |
+| Storefront | https://casawiki.vercel.app |
 | API (instancia propia) | https://casa-wiki-api.vercel.app |
 | Base de datos | Neon `casawiki-db` (proyecto independiente, región iad1) |
 | Imágenes | Vercel Blob `casawiki-images` |
@@ -54,7 +54,7 @@ El backend solo acepta identidades verificadas por Google (`POST /api/auth/googl
 
 ```
 http://localhost:3002/api/auth/callback/google
-https://casa-wiki.vercel.app/api/auth/callback/google
+https://casawiki.vercel.app/api/auth/callback/google
 ```
 
 El `GOOGLE_CLIENT_ID` de este proyecto debe ser el mismo que el del backend (el backend valida la audiencia del `id_token`). El resto de la tienda funciona sin login: carrito anónimo, checkout y seguimiento por WhatsApp.
