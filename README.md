@@ -1,6 +1,6 @@
 # Casa Wiki
 
-Storefront de mobiliario artesanal construido con **Next.js 15 (App Router)**, React 19 y Tailwind 4. Consume la API de `legas-backend` (NestJS + PostgreSQL) y tiene identidad visual propia: paleta crema/oliva/terracota, tipografía editorial (Playfair Display + Plus Jakarta Sans) y flujo de compra coordinado por WhatsApp.
+Storefront de mobiliario artesanal construido con **Next.js 15 (App Router)**, React 19 y Tailwind 4. Consume la API propia de Casa Wiki (NestJS + PostgreSQL, código basado en `legas-backend`) y tiene identidad visual propia: paleta crema/oliva/terracota, tipografía editorial (Playfair Display + Plus Jakarta Sans) y flujo de compra coordinado por WhatsApp.
 
 Diseño basado en el proyecto Stitch *Casa Wiki Furniture Ecommerce* (pantallas de Inicio & Colecciones, Catálogo, Producto & Carrito, Login & Club y Checkout & Confirmación).
 
@@ -10,8 +10,12 @@ Diseño basado en el proyecto Stitch *Casa Wiki Furniture Ecommerce* (pantallas 
 |---|---|
 | Storefront | https://casawiki.vercel.app |
 | API (instancia propia) | https://casa-wiki-api.vercel.app |
+| Panel de administración | https://casa-wiki-admin.vercel.app |
 | Base de datos | Neon `casawiki-db` (proyecto independiente, región iad1) |
 | Imágenes | Vercel Blob `casawiki-images` |
+
+Repositorios: `Ariel-Sq/casa-wiki-frontend`, `Ariel-Sq/casa-wiki-backend`, `Ariel-Sq/casa-wiki-admin`.
+
 
 
 ## Requisitos
@@ -24,7 +28,7 @@ Diseño basado en el proyecto Stitch *Casa Wiki Furniture Ecommerce* (pantallas 
 
 ```bash
 source ~/.nvm/nvm.sh && nvm use 22
-cd ~/projects/casa-wiki
+cd ~/projects/casa-wiki-frontend
 pnpm install
 cp .env.example .env.local   # completar credenciales
 pnpm dev
@@ -55,6 +59,8 @@ El backend solo acepta identidades verificadas por Google (`POST /api/auth/googl
 ```
 http://localhost:3002/api/auth/callback/google
 https://casawiki.vercel.app/api/auth/callback/google
+https://casa-wiki-admin.vercel.app/api/auth/callback/google
+http://localhost:3003/api/auth/callback/google
 ```
 
 El `GOOGLE_CLIENT_ID` de este proyecto debe ser el mismo que el del backend (el backend valida la audiencia del `id_token`). El resto de la tienda funciona sin login: carrito anónimo, checkout y seguimiento por WhatsApp.
