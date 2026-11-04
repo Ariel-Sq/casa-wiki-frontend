@@ -22,7 +22,7 @@ Repositorios: `Ariel-Sq/casa-wiki-frontend`, `Ariel-Sq/casa-wiki-backend`, `Arie
 
 - Node 22 (`.nvmrc`)
 - pnpm
-- `legas-backend` corriendo en `http://localhost:8080` con la base local (`ecommerce_db`)
+- `casa-wiki-backend` corriendo en `http://localhost:8080` con la base local (`ecommerce_db`)
 
 ## Puesta en marcha
 
@@ -46,7 +46,7 @@ pnpm dev
 | `BACKEND_URL` | URL interna del backend. Solo se usa del lado servidor. |
 | `NEXTAUTH_URL` | URL canónica de esta app (`http://localhost:3002`). |
 | `NEXTAUTH_SECRET` | Secreto para firmar la sesión (`openssl rand -base64 32`). |
-| `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` | Mismo cliente OAuth que usa `legas-backend`. |
+| `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` | Mismo cliente OAuth que usan el backend y el panel. |
 | `NEXT_PUBLIC_WHATSAPP_PHONE` | Número de WhatsApp en formato `549...` para los CTAs. |
 | `NEXT_PUBLIC_SITE_URL` | URL pública para metadata y SEO. |
 | `NEXT_PUBLIC_MP_ENABLED` | `true` para habilitar MercadoPago en el checkout. |
@@ -81,7 +81,7 @@ components/                     Header, footer, cart drawer, cards, filtros, etc
 lib/                            Capa de datos y helpers server-side
 ```
 
-## Integración con legas-backend
+## Integración con la API de Casa Wiki
 
 Todas las llamadas al backend son server-side (`lib/backend.ts`), nunca desde el browser:
 
@@ -113,7 +113,7 @@ Este proyecto tiene su propia instancia de backend (`casa-wiki-backend`, deploy 
 - Cuenta de MercadoPago (sin token real en ninguna de las dos).
 - Credenciales SMTP/Gmail (la instancia nueva no las tiene; los mails de pedido no se envían).
 - Número de WhatsApp.
-- Repositorio del backend (`legas-backend`), del que se copió el código.
+- Repositorio del backend: ahora existe `casa-wiki-backend`, pero el código sigue siendo un fork de `legas-backend`.
 
 Para aislamiento total: crear un cliente OAuth nuevo, una app de MercadoPago nueva, un remitente SMTP propio y mover el backend a su propio repo.
 
