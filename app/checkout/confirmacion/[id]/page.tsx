@@ -93,7 +93,7 @@ export default async function ConfirmationPage({
           </span>
           <div>
             <p className="text-[9.5px] font-semibold uppercase tracking-[0.12em] text-muted">
-              Comprobante enviado
+              Comprobante digital
             </p>
             <p className="text-[12.5px] font-semibold">{order.customerEmail || 'Tu correo'}</p>
           </div>
