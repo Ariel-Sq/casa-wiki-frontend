@@ -1,0 +1,6 @@
+.env*
+_design
+node_modules
+.next
+*.tsbuildinfo
+README.md

@@ -23,6 +23,7 @@ import { cn, formatPrice } from '@/lib/utils';
 export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
   const { cart, pending: cartPending } = useCart();
   const router = useRouter();
+  const mpEnabled = process.env.NEXT_PUBLIC_MP_ENABLED === 'true';
   const [email, setEmail] = useState(defaultEmail);
   const [phone, setPhone] = useState('');
   const [dni, setDni] = useState('');
@@ -252,25 +253,34 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
 
             <button
               type="button"
-              onClick={() => setPayment('mercadopago')}
+              onClick={() => mpEnabled && setPayment('mercadopago')}
+              disabled={!mpEnabled}
               className={cn(
                 'flex w-full items-start gap-3 rounded-xl border p-4 text-left transition-colors',
                 payment === 'mercadopago'
                   ? 'border-olive bg-olive-pale/60'
                   : 'border-line hover:border-olive/60',
+                !mpEnabled && 'cursor-not-allowed opacity-60 hover:border-line',
               )}
             >
               <CreditCard className="mt-0.5 size-5 text-olive" />
               <span className="flex-1">
                 <span className="flex items-center justify-between gap-2">
                   <span className="text-[13px] font-semibold">Tarjeta o dinero en cuenta</span>
-                  <span className="text-[11px] font-semibold text-muted">
-                    +{Math.round(MERCADOPAGO_SURCHARGE_RATE * 100)}%
-                  </span>
+                  {mpEnabled ? (
+                    <span className="text-[11px] font-semibold text-muted">
+                      +{Math.round(MERCADOPAGO_SURCHARGE_RATE * 100)}%
+                    </span>
+                  ) : (
+                    <span className="rounded-full bg-surface-mid px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.08em] text-muted">
+                      Próximamente
+                    </span>
+                  )}
                 </span>
                 <span className="mt-1 block text-[11.5px] leading-snug text-muted">
-                  Pagás ahora con MercadoPago en hasta {MAX_INSTALLMENTS} cuotas. El
-                  recargo corresponde al precio de lista.
+                  {mpEnabled
+                    ? `Pagás ahora con MercadoPago en hasta ${MAX_INSTALLMENTS} cuotas. El recargo corresponde al precio de lista.`
+                    : 'Estamos habilitando los pagos con tarjeta. Por ahora coordinamos transferencia o efectivo por WhatsApp.'}
                 </span>
               </span>
             </button>

@@ -4,6 +4,16 @@ Storefront de mobiliario artesanal construido con **Next.js 15 (App Router)**, R
 
 Diseño basado en el proyecto Stitch *Casa Wiki Furniture Ecommerce* (pantallas de Inicio & Colecciones, Catálogo, Producto & Carrito, Login & Club y Checkout & Confirmación).
 
+## Producción
+
+| Servicio | URL |
+|---|---|
+| Storefront | https://casa-wiki.vercel.app |
+| API (instancia propia) | https://casa-wiki-api.vercel.app |
+| Base de datos | Neon `casawiki-db` (proyecto independiente, región iad1) |
+| Imágenes | Vercel Blob `casawiki-images` |
+
+
 ## Requisitos
 
 - Node 22 (`.nvmrc`)
@@ -35,13 +45,16 @@ pnpm dev
 | `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` | Mismo cliente OAuth que usa `legas-backend`. |
 | `NEXT_PUBLIC_WHATSAPP_PHONE` | Número de WhatsApp en formato `549...` para los CTAs. |
 | `NEXT_PUBLIC_SITE_URL` | URL pública para metadata y SEO. |
+| `NEXT_PUBLIC_MP_ENABLED` | `true` para habilitar MercadoPago en el checkout. |
+| `FRONTEND_SHARED_SECRET` | Debe coincidir con el `FRONTEND_SHARED_SECRET` del backend. |
 
 ### Google OAuth
 
-El backend solo acepta identidades verificadas por Google (`POST /api/auth/google`). Para que el login funcione en local hay que agregar este redirect URI al cliente OAuth de Google:
+El backend solo acepta identidades verificadas por Google (`POST /api/auth/google`). Para que el login funcione hay que agregar estos redirect URIs al cliente OAuth de Google:
 
 ```
 http://localhost:3002/api/auth/callback/google
+https://casa-wiki.vercel.app/api/auth/callback/google
 ```
 
 El `GOOGLE_CLIENT_ID` de este proyecto debe ser el mismo que el del backend (el backend valida la audiencia del `id_token`). El resto de la tienda funciona sin login: carrito anónimo, checkout y seguimiento por WhatsApp.
@@ -82,9 +95,22 @@ Identidad:
 Dos modos, soportados por el backend:
 
 1. **Transferencia/efectivo coordinado por WhatsApp** (`paymentMethod: "offline"`): crea la orden y redirige a la confirmación. El pago se coordina por WhatsApp. Sin recargo.
-2. **MercadoPago** (`paymentMethod: "mercadopago"`): crea la preferencia y redirige a Checkout Pro. Precio de lista (+15%).
+2. **MercadoPago** (`paymentMethod: "mercadopago"`): crea la preferencia y redirige a Checkout Pro. Precio de lista (+15%). Se muestra solo si `NEXT_PUBLIC_MP_ENABLED=true`.
 
 El stock se reserva al confirmar; el carrito se vacía al crear la orden.
+
+## Aislamiento respecto de Legas
+
+Este proyecto tiene su propia instancia de backend (`casa-wiki-backend`, deploy `casa-wiki-api`), su propia base Neon (`casawiki-db`), su propio Blob store (`casawiki-images`), secretos JWT/shared-secret propios y su propio proyecto de Vercel. Lo que todavía se comparte:
+
+- Cliente OAuth de Google (mismo `GOOGLE_CLIENT_ID`).
+- Cuenta de MercadoPago (sin token real en ninguna de las dos).
+- Credenciales SMTP/Gmail (la instancia nueva no las tiene; los mails de pedido no se envían).
+- Número de WhatsApp.
+- Repositorio del backend (`legas-backend`), del que se copió el código.
+
+Para aislamiento total: crear un cliente OAuth nuevo, una app de MercadoPago nueva, un remitente SMTP propio y mover el backend a su propio repo.
+
 
 ## Scripts
 
