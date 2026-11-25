@@ -60,7 +60,7 @@ El backend solo acepta identidades verificadas por Google (`POST /api/auth/googl
 http://localhost:3002/api/auth/callback/google
 https://casawiki.vercel.app/api/auth/callback/google
 https://casa-wiki-admin.vercel.app/api/auth/callback/google
-http://localhost:3003/api/auth/callback/google
+http://localhost:3004/api/auth/callback/google
 ```
 
 El `GOOGLE_CLIENT_ID` de este proyecto debe ser el mismo que el del backend (el backend valida la audiencia del `id_token`). El resto de la tienda funciona sin login: carrito anónimo, checkout y seguimiento por WhatsApp.
