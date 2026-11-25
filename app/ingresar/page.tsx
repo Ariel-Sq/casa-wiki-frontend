@@ -105,10 +105,13 @@ export default async function IngresarPage() {
 
         <div className="flex flex-col items-center justify-center px-6 py-10 md:px-12 md:py-14">
           <div className="flex flex-col items-center text-center">
-            <span className="grid size-14 place-items-center rounded-full bg-olive-soft text-olive">
-              <Leaf className="size-6" />
-            </span>
-            <p className="mt-3 font-display text-[30px] leading-none">Casa Wiki</p>
+            <Image
+              src="/casa-wiki-logo.png"
+              alt="Casa Wiki"
+              width={1774}
+              height={887}
+              className="h-20 w-auto md:h-24"
+            />
             <p className="mt-2 text-[8.5px] font-semibold uppercase tracking-[0.32em] text-muted">
               Mobiliario · Fabricación nacional
             </p>

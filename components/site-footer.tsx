@@ -1,5 +1,6 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { Leaf, Instagram, Mail, MessageCircle, ShieldCheck, Hammer } from 'lucide-react';
+import { Instagram, Mail, MessageCircle, ShieldCheck, Hammer } from 'lucide-react';
 import { NewsletterForm } from './newsletter-form';
 
 export function SiteFooter() {
@@ -7,11 +8,14 @@ export function SiteFooter() {
     <footer className="mt-20 border-t border-line bg-surface-low">
       <div className="shell grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
-          <Link href="/" className="flex items-center gap-2.5">
-            <span className="grid size-9 place-items-center rounded-full bg-olive-soft text-olive">
-              <Leaf className="size-4.5" />
-            </span>
-            <span className="font-display text-2xl">Casa Wiki</span>
+          <Link href="/" aria-label="Casa Wiki" className="inline-flex">
+            <Image
+              src="/casa-wiki-logo.png"
+              alt="Casa Wiki"
+              width={1774}
+              height={887}
+              className="h-16 w-auto"
+            />
           </Link>
           <p className="mt-4 max-w-sm text-[13.5px] leading-relaxed text-muted">
             Mueblería de álamo macizo con fabricación nacional. Muebles simples,

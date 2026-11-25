@@ -1,12 +1,12 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { signOut } from 'next-auth/react';
 import { useEffect, useRef, useState } from 'react';
 import {
   ChevronDown,
-  Leaf,
   LogOut,
   Menu,
   Package,
@@ -85,18 +85,15 @@ export function SiteHeader({
               <Menu className="size-5" />
             </button>
 
-            <Link href="/" className="flex items-center gap-2.5">
-              <span className="grid size-9 place-items-center rounded-full bg-olive-soft text-olive">
-                <Leaf className="size-4.5" />
-              </span>
-              <span className="leading-none">
-                <span className="block font-display text-[22px] tracking-tight">
-                  Casa Wiki
-                </span>
-                <span className="mt-1 block text-[8.5px] font-semibold uppercase tracking-[0.28em] text-muted">
-                  Mobiliario · Fabricación nacional
-                </span>
-              </span>
+            <Link href="/" aria-label="Casa Wiki" className="flex items-center">
+              <Image
+                src="/casa-wiki-logo.png"
+                alt="Casa Wiki"
+                width={1774}
+                height={887}
+                priority
+                className="h-12 w-auto md:h-16"
+              />
             </Link>
           </div>
 
@@ -233,7 +230,15 @@ export function SiteHeader({
           />
           <div className="animate-drawer absolute inset-y-0 left-0 w-[84%] max-w-sm bg-background p-6">
             <div className="flex items-center justify-between">
-              <span className="font-display text-2xl">Casa Wiki</span>
+              <Link href="/" onClick={() => setMenuOpen(false)} aria-label="Casa Wiki">
+                <Image
+                  src="/casa-wiki-logo.png"
+                  alt="Casa Wiki"
+                  width={1774}
+                  height={887}
+                  className="h-12 w-auto"
+                />
+              </Link>
               <button
                 type="button"
                 onClick={() => setMenuOpen(false)}
