@@ -21,16 +21,19 @@ const PAGE_SIZE = 9;
 export function CatalogClient({
   products,
   categories,
-  initialCategory = '',
+  initialCategories = [],
+  initialCollectionLabel = '',
   initialQuery = '',
 }: {
   products: CatalogProduct[];
   categories: Category[];
-  initialCategory?: string;
+  initialCategories?: string[];
+  initialCollectionLabel?: string;
   initialQuery?: string;
 }) {
   const { add, pending } = useCart();
-  const [category, setCategory] = useState(initialCategory);
+  const [selectedCategories, setSelectedCategories] = useState(initialCategories);
+  const [collectionLabel, setCollectionLabel] = useState(initialCollectionLabel);
   const [query, setQuery] = useState(initialQuery);
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [onlyStock, setOnlyStock] = useState(false);
@@ -50,7 +53,7 @@ export function CatalogClient({
   const filtered = useMemo(() => {
     const term = query.trim().toLowerCase();
     const list = products.filter((product) => {
-      if (category && product.categorySlug !== category) return false;
+      if (selectedCategories.length && !selectedCategories.includes(product.categorySlug)) return false;
       if (onlyStock && product.stock <= 0) return false;
       if (maxPrice !== null && product.price > maxPrice) return false;
       if (term) {
@@ -70,7 +73,7 @@ export function CatalogClient({
       default:
         return list.sort((a, b) => Number(b.featured) - Number(a.featured));
     }
-  }, [products, category, onlyStock, maxPrice, query, sort]);
+  }, [products, selectedCategories, onlyStock, maxPrice, query, sort]);
 
   const pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, pages);
@@ -79,12 +82,26 @@ export function CatalogClient({
     currentPage * PAGE_SIZE,
   );
 
-  const activeCategory = categories.find((c) => c.slug === category);
+  const activeCategories = categories.filter((c) =>
+    selectedCategories.includes(c.slug),
+  );
+  const activeCategory = activeCategories.length === 1 ? activeCategories[0] : null;
   const hasFilters =
-    Boolean(category) || Boolean(query) || onlyStock || maxPrice !== null;
+    selectedCategories.length > 0 || Boolean(query) || onlyStock || maxPrice !== null;
+
+  function toggleCategory(slug: string) {
+    setCollectionLabel('');
+    setSelectedCategories((current) =>
+      current.includes(slug)
+        ? current.filter((item) => item !== slug)
+        : [...current, slug],
+    );
+    setPage(1);
+  }
 
   function reset() {
-    setCategory('');
+    setSelectedCategories([]);
+    setCollectionLabel('');
     setQuery('');
     setOnlyStock(false);
     setMaxPrice(null);
@@ -112,11 +129,10 @@ export function CatalogClient({
           <label className="flex cursor-pointer items-center justify-between rounded-lg px-2 py-1.5 text-[13px] hover:bg-surface-low">
             <span className="flex items-center gap-2">
               <input
-                type="radio"
-                name="category"
-                checked={!category}
+                type="checkbox"
+                checked={selectedCategories.length === 0}
                 onChange={() => {
-                  setCategory('');
+                  setSelectedCategories([]);
                   setPage(1);
                 }}
                 className="accent-olive"
@@ -135,13 +151,9 @@ export function CatalogClient({
               >
                 <span className="flex items-center gap-2">
                   <input
-                    type="radio"
-                    name="category"
-                    checked={category === item.slug}
-                    onChange={() => {
-                      setCategory(item.slug);
-                      setPage(1);
-                    }}
+                    type="checkbox"
+                    checked={selectedCategories.includes(item.slug)}
+                    onChange={() => toggleCategory(item.slug)}
                     className="accent-olive"
                   />
                   {item.name}
@@ -220,10 +232,12 @@ export function CatalogClient({
         <Link href="/" className="hover:text-olive">Inicio</Link>
         <span>/</span>
         <Link href="/catalogo" className="hover:text-olive">Catálogo</Link>
-        {activeCategory && (
+        {(collectionLabel || activeCategory) && (
           <>
             <span>/</span>
-            <span className="text-ink">{activeCategory.name}</span>
+            <span className="text-ink">
+              {collectionLabel || activeCategory?.name}
+            </span>
           </>
         )}
       </nav>
@@ -231,7 +245,11 @@ export function CatalogClient({
       <header className="mt-6 border-b border-line pb-7">
         <p className="eyebrow text-olive">Colección 2026</p>
         <h1 className="mt-2 font-display text-[38px] leading-tight md:text-[50px]">
-          {activeCategory ? `Colección ${activeCategory.name}` : 'Catálogo de muebles'}
+          {collectionLabel
+            ? `Colección ${collectionLabel}`
+            : activeCategory
+              ? `Colección ${activeCategory.name}`
+              : 'Catálogo de muebles'}
         </h1>
         <div className="mt-3 flex flex-col justify-between gap-3 md:flex-row md:items-end">
           <p className="max-w-2xl text-[13.5px] leading-relaxed text-muted">

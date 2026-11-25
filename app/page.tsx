@@ -21,7 +21,7 @@ const SPACES = [
     copy: 'El ritual de compartir',
     image:
       'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=900&q=80',
-    href: '/catalogo?categoria=mesas-de-comedor',
+    href: '/catalogo?categoria=mesas-de-comedor,mesas-ratonas&coleccion=Mesas',
     count: 'Mesas de comedor',
   },
   {
@@ -29,7 +29,7 @@ const SPACES = [
     copy: 'Refugio y descanso',
     image:
       'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
-    href: '/catalogo?categoria=comodas',
+    href: '/catalogo?categoria=comodas,mesas-de-luz&coleccion=Dormitorio',
     count: 'Cómodas y mesas de luz',
   },
   {
@@ -37,7 +37,7 @@ const SPACES = [
     copy: 'Un lugar para trabajar',
     image:
       'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80',
-    href: '/catalogo?categoria=escritorios',
+    href: '/catalogo?categoria=escritorios&coleccion=Escritorios',
     count: 'Escritorios',
   },
   {
@@ -45,7 +45,7 @@ const SPACES = [
     copy: 'Orden y presencia',
     image:
       'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=900&q=80',
-    href: '/catalogo?categoria=racks',
+    href: '/catalogo?categoria=racks,vajilleros&coleccion=Almacenaje',
     count: 'Racks y vajilleros',
   },
 ];

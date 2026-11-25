@@ -13,9 +13,13 @@ export const metadata: Metadata = {
 export default async function CatalogoPage({
   searchParams,
 }: {
-  searchParams: Promise<{ categoria?: string; buscar?: string }>;
+  searchParams: Promise<{ categoria?: string; buscar?: string; coleccion?: string }>;
 }) {
   const params = await searchParams;
+  const initialCategories = (params.categoria ?? '')
+    .split(',')
+    .map((slug) => slug.trim())
+    .filter(Boolean);
   const [products, categories] = await Promise.all([
     getCatalogProducts(),
     getCategories(),
@@ -25,7 +29,8 @@ export default async function CatalogoPage({
     <CatalogClient
       products={products}
       categories={categories}
-      initialCategory={params.categoria ?? ''}
+      initialCategories={initialCategories}
+      initialCollectionLabel={params.coleccion ?? ''}
       initialQuery={params.buscar ?? ''}
     />
   );
