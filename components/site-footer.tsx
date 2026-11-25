@@ -29,7 +29,7 @@ export function SiteFooter() {
           </h3>
           <ul className="mt-4 space-y-2.5 text-[13px] text-muted">
             <li><Link href="/catalogo" className="hover:text-olive">Colecciones actuales</Link></li>
-            <li><Link href="/catalogo?categoria=sillas" className="hover:text-olive">Sillas y sillones</Link></li>
+            <li><Link href="/catalogo?categoria=comodas" className="hover:text-olive">Cómodas</Link></li>
             <li><Link href="/catalogo?categoria=mesas-de-comedor" className="hover:text-olive">Mesas de comedor</Link></li>
             <li><Link href="/catalogo?categoria=escritorios" className="hover:text-olive">Escritorios</Link></li>
             <li><Link href="/catalogo?categoria=racks" className="hover:text-olive">Racks y vajilleros</Link></li>

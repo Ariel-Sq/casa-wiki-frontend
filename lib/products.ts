@@ -17,6 +17,38 @@ export interface CatalogProduct {
   variationId: string;
 }
 
+
+function normalize(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+/**
+ * Casa Wiki sells álamo only for now. Any template that mentions petiribí
+ * (in its name, description or variation materials) is hidden from the
+ * storefront, including direct product URLs.
+ */
+export function isAlamoTemplate(template: ProductTemplate): boolean {
+  if (normalize(template.name).includes('petiribi')) return false;
+
+  const variations = template.variations ?? [];
+  if (
+    variations.some((variation) =>
+      normalize(variation.attributes?.material ?? '').includes('petiribi'),
+    )
+  ) {
+    return false;
+  }
+
+  const active = variations.filter((v) => v.is_active && v.stock > 0);
+  return (
+    active.length > 0 &&
+    active.every((v) => normalize(v.attributes?.material ?? '').includes('alamo'))
+  );
+}
+
 function activeVariations(template: ProductTemplate): ProductVariation[] {
   return (template.variations ?? []).filter((v) => v.is_active && v.stock > 0);
 }
@@ -62,7 +94,7 @@ export function toCatalogProduct(
 export async function getCatalogProducts(): Promise<CatalogProduct[]> {
   const templates = await backendFetch<ProductTemplate[]>('/api/product-templates');
   return templates
-    .filter((t) => t.is_active)
+    .filter((t) => t.is_active && isAlamoTemplate(t))
     .map(toCatalogProduct)
     .filter((p): p is CatalogProduct => p !== null);
 }
@@ -81,9 +113,10 @@ export async function getTemplate(
   slugOrId: string,
 ): Promise<ProductTemplate | null> {
   try {
-    return await backendFetch<ProductTemplate>(
+    const template = await backendFetch<ProductTemplate>(
       `/api/product-templates/by-slug/${encodeURIComponent(slugOrId)}`,
     );
+    return isAlamoTemplate(template) ? template : null;
   } catch {
     return null;
   }

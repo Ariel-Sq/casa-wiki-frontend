@@ -16,13 +16,6 @@ import type { CatalogProduct } from '@/lib/products';
 import type { Category } from '@/lib/types';
 import { cn, formatPrice } from '@/lib/utils';
 
-const MATERIALS = [
-  { label: 'Álamo', match: 'álamo' },
-  { label: 'Petiribí macizo', match: 'petiribí' },
-  { label: 'Enchapado petiribí', match: 'enchapado' },
-  { label: 'Microcemento', match: 'microcemento' },
-];
-
 const PAGE_SIZE = 9;
 
 export function CatalogClient({
@@ -38,7 +31,6 @@ export function CatalogClient({
 }) {
   const { add, pending } = useCart();
   const [category, setCategory] = useState(initialCategory);
-  const [materials, setMaterials] = useState<string[]>([]);
   const [query, setQuery] = useState(initialQuery);
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [onlyStock, setOnlyStock] = useState(false);
@@ -61,10 +53,6 @@ export function CatalogClient({
       if (category && product.categorySlug !== category) return false;
       if (onlyStock && product.stock <= 0) return false;
       if (maxPrice !== null && product.price > maxPrice) return false;
-      if (materials.length) {
-        const material = product.material.toLowerCase();
-        if (!materials.some((m) => material.includes(m))) return false;
-      }
       if (term) {
         const haystack = `${product.name} ${product.material} ${product.category}`.toLowerCase();
         if (!haystack.includes(term)) return false;
@@ -82,7 +70,7 @@ export function CatalogClient({
       default:
         return list.sort((a, b) => Number(b.featured) - Number(a.featured));
     }
-  }, [products, category, onlyStock, maxPrice, materials, query, sort]);
+  }, [products, category, onlyStock, maxPrice, query, sort]);
 
   const pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, pages);
@@ -93,23 +81,13 @@ export function CatalogClient({
 
   const activeCategory = categories.find((c) => c.slug === category);
   const hasFilters =
-    Boolean(category) || materials.length > 0 || Boolean(query) || onlyStock || maxPrice !== null;
+    Boolean(category) || Boolean(query) || onlyStock || maxPrice !== null;
 
   function reset() {
     setCategory('');
-    setMaterials([]);
     setQuery('');
     setOnlyStock(false);
     setMaxPrice(null);
-    setPage(1);
-  }
-
-  function toggleMaterial(match: string) {
-    setMaterials((current) =>
-      current.includes(match)
-        ? current.filter((item) => item !== match)
-        : [...current, match],
-    );
     setPage(1);
   }
 
@@ -172,29 +150,6 @@ export function CatalogClient({
               </label>
             );
           })}
-        </div>
-      </div>
-
-      <div>
-        <p className="mb-2.5 text-[10.5px] font-semibold uppercase tracking-[0.13em] text-muted">
-          Maderas y acabados
-        </p>
-        <div className="flex flex-wrap gap-1.5">
-          {MATERIALS.map((material) => (
-            <button
-              key={material.match}
-              type="button"
-              onClick={() => toggleMaterial(material.match)}
-              className={cn(
-                'rounded-full border px-3 py-1.5 text-[11px] font-medium transition-colors',
-                materials.includes(material.match)
-                  ? 'border-olive bg-olive text-white'
-                  : 'border-line bg-surface text-muted hover:border-olive hover:text-olive',
-              )}
-            >
-              {material.label}
-            </button>
-          ))}
         </div>
       </div>
 

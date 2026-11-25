@@ -17,15 +17,7 @@ export const dynamic = 'force-dynamic';
 
 const SPACES = [
   {
-    title: 'Living & Sofás',
-    copy: 'Piezas de encuentro',
-    image:
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80',
-    href: '/catalogo?categoria=sillas',
-    count: 'Sillones y sillas',
-  },
-  {
-    title: 'Comedor & Mesas',
+    title: 'Mesas & Comedor',
     copy: 'El ritual de compartir',
     image:
       'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=900&q=80',
@@ -33,20 +25,28 @@ const SPACES = [
     count: 'Mesas de comedor',
   },
   {
-    title: 'Dormitorio & Relax',
+    title: 'Dormitorio',
     copy: 'Refugio y descanso',
     image:
       'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
     href: '/catalogo?categoria=comodas',
-    count: 'Cómodas y respaldos',
+    count: 'Cómodas y mesas de luz',
   },
   {
-    title: 'Iluminación & Deco',
-    copy: 'Detalles que habitan',
+    title: 'Escritorios',
+    copy: 'Un lugar para trabajar',
+    image:
+      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80',
+    href: '/catalogo?categoria=escritorios',
+    count: 'Escritorios',
+  },
+  {
+    title: 'Almacenaje',
+    copy: 'Orden y presencia',
     image:
       'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=900&q=80',
-    href: '/catalogo?categoria=espejos',
-    count: 'Espejos y objetos',
+    href: '/catalogo?categoria=racks',
+    count: 'Racks y vajilleros',
   },
 ];
 
@@ -213,7 +213,7 @@ export default async function HomePage() {
               </h2>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              {['Todos', 'Sillones', 'Mesas', 'Almacenaje'].map((tab, index) => (
+              {['Todos', 'Mesas', 'Escritorios', 'Almacenaje'].map((tab, index) => (
                 <Link
                   key={tab}
                   href="/catalogo"

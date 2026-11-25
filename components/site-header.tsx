@@ -127,7 +127,7 @@ export function SiteHeader({
               <input
                 value={term}
                 onChange={(event) => setTerm(event.target.value)}
-                placeholder="Buscar sofás, mesas, luminarias..."
+                placeholder="Buscar mesas, escritorios, cómodas..."
                 className="w-[210px] bg-transparent text-[12.5px] outline-none placeholder:text-muted/70"
                 aria-label="Buscar productos"
               />

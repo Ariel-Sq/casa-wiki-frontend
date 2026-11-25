@@ -5,6 +5,7 @@ import { ProductDetail, type ProductView } from '@/components/product-detail';
 import { ProductCard } from '@/components/product-card';
 import { backendImageUrl } from '@/lib/backend';
 import { getCatalogProducts, getTemplate } from '@/lib/products';
+import { removePetiribi } from '@/lib/utils';
 
 export const dynamic = 'force-dynamic';
 
@@ -18,9 +19,10 @@ export async function generateMetadata({
   if (!template) return { title: 'Pieza no encontrada' };
   return {
     title: template.name,
-    description:
+    description: removePetiribi(
       template.description ??
-      `${template.name} — mueble de álamo macizo de Casa Wiki, fabricación nacional.`,
+        `${template.name} — mueble de álamo macizo de Casa Wiki, fabricación nacional.`,
+    ),
   };
 }
 
@@ -56,11 +58,11 @@ export default async function ProductPage({
     id: template.id,
     slug: template.slug,
     name: template.name,
-    description: template.description ?? '',
+    description: removePetiribi(template.description ?? ''),
     category: category?.name ?? 'Muebles',
     categorySlug: category?.slug ?? 'muebles',
     specifications: Object.entries(template.specifications ?? {}).map(
-      ([label, value]) => ({ label, value: String(value) }),
+      ([label, value]) => ({ label, value: removePetiribi(String(value)) }),
     ),
     variations,
   };
