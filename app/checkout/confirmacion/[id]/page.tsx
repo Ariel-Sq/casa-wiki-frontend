@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 const STEPS = [
-  { title: 'Pedido registrado', copy: 'Pago acreditado u orden enviada al atelier.' },
+  { title: 'Pedido registrado', copy: 'Pago acreditado u orden enviada al equipo de Casa Wiki.' },
   { title: 'Coordinación por WhatsApp', copy: 'Definimos entrega, horarios y acceso.' },
   { title: 'Embalaje especial', copy: 'Protección con telas naturales y fibras.' },
   { title: 'Entrega y armado', copy: 'Montaje artesanal en tu espacio.' },
@@ -83,8 +83,8 @@ export default async function ConfirmationPage({
             ¡Pedido Confirmado!
           </h1>
           <p className="mt-3 max-w-2xl text-[13.5px] leading-relaxed text-muted">
-            Gracias por confiar en el diseño consciente y la nobleza de nuestras maderas.
-            Tu compra ya ingresó al atelier de ebanistería.
+            Gracias por confiar en Casa Wiki. Tu compra ya ingresó a nuestro circuito de
+            preparación.
           </p>
         </div>
         <div className="flex items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3">
@@ -107,7 +107,7 @@ export default async function ConfirmationPage({
           </span>
           <div>
             <p className="text-[9.5px] font-semibold uppercase tracking-[0.16em] text-olive">
-              Atención personalizada en atelier · Respuesta inmediata
+              Atención personalizada de Casa Wiki · Respuesta inmediata
             </p>
             <h2 className="mt-1 max-w-xl font-display text-[26px] leading-tight md:text-[30px]">
               Tu pedido está listo para coordinar entrega por WhatsApp.
@@ -220,11 +220,11 @@ export default async function ConfirmationPage({
             </div>
             <div className="flex justify-between">
               <span className="text-muted">Envío especializado</span>
-              <span className="font-semibold text-olive">Gratis</span>
+              <span className="font-semibold text-olive">A coordinar</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted">Servicio de montaje</span>
-              <span className="text-olive">Bonificado</span>
+              <span className="text-olive">A coordinar</span>
             </div>
             <div className="flex items-end justify-between border-t border-line pt-2">
               <span className="text-[13px] font-semibold">Total</span>
@@ -260,7 +260,7 @@ export default async function ConfirmationPage({
                   </dt>
                   <dd>
                     {order.deliveryMethod === 'pickup'
-                      ? 'Atelier Casa Wiki · Palermo, CABA'
+                      ? 'Nuestro depósito · Buenos Aires'
                       : order.deliveryAddress || 'A coordinar por WhatsApp'}
                   </dd>
                 </div>
@@ -288,11 +288,11 @@ export default async function ConfirmationPage({
 
           <section className="rounded-2xl border border-line bg-surface p-6">
             <h2 className="flex items-center gap-2 font-display text-[20px]">
-              <Sparkles className="size-4.5 text-clay" /> Garantía de atelier por 5 años
+              <Sparkles className="size-4.5 text-clay" /> Garantía de 6 meses
             </h2>
             <p className="mt-2 text-[11.5px] leading-relaxed text-muted">
-              Estructuras de madera maciza ensambladas artesanalmente con espigas y colas
-              biodegradables de alta resistencia.
+              Muebles de álamo macizo terminados con laca poliuretánica. Cobertura sobre
+              estructura y terminación durante 6 meses.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-2">
               <PrintButton />

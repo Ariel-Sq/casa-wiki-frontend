@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Catálogo de muebles',
   description:
-    'Explorá la colección completa de muebles artesanales Casa Wiki: maderas nobles certificadas, tapizados orgánicos y piezas hechas a mano.',
+    'Explorá la colección de muebles de álamo macizo de Casa Wiki: fabricación nacional, terminación en laca poliuretánica y entrega coordinada.',
 };
 
 export default async function CatalogoPage({

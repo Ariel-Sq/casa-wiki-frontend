@@ -21,7 +21,7 @@ import { cn } from '@/lib/utils';
 const NAV = [
   { label: 'Inicio', href: '/' },
   { label: 'Catálogo & Colecciones', href: '/catalogo' },
-  { label: 'Nuestro atelier', href: '/#manifiesto' },
+  { label: 'Nosotros', href: '/#manifiesto' },
 ];
 
 export function SiteHeader({
@@ -65,7 +65,7 @@ export function SiteHeader({
     <header className="sticky top-0 z-40">
       <div className="bg-olive-dark text-white">
         <div className="shell flex h-8 items-center justify-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] md:text-[11px]">
-          <span className="hidden md:inline">Envíos gratis a todo el país</span>
+          <span className="hidden md:inline">Fabricación nacional</span>
           <span className="hidden md:inline text-white/40">·</span>
           <span>6 cuotas sin interés con todos los bancos</span>
           <span className="hidden md:inline text-white/40">·</span>
@@ -94,7 +94,7 @@ export function SiteHeader({
                   Casa Wiki
                 </span>
                 <span className="mt-1 block text-[8.5px] font-semibold uppercase tracking-[0.28em] text-muted">
-                  Mobiliario · Atelier
+                  Mobiliario · Fabricación nacional
                 </span>
               </span>
             </Link>
@@ -258,7 +258,7 @@ export function SiteHeader({
               </Link>
             </nav>
             <p className="mt-8 text-sm leading-relaxed text-muted">
-              Atelier de diseño contemporáneo y ebanistería responsable en Buenos Aires.
+              Mueblería de álamo macizo con fabricación nacional y terminaciones en laca poliuretánica.
             </p>
             <a
               href="https://wa.me/5491145892000"

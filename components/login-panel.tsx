@@ -81,7 +81,7 @@ export function LoginPanel() {
 
       <p className="mt-5 text-center text-[10.5px] leading-relaxed text-muted">
         Al continuar, aceptás nuestros{' '}
-        <span className="underline underline-offset-2">Términos de Atelier</span> y la{' '}
+        <span className="underline underline-offset-2">Términos de compra</span> y la{' '}
         <span className="underline underline-offset-2">Política de Privacidad</span> de Casa
         Wiki.
       </p>

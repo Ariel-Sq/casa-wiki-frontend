@@ -58,7 +58,7 @@ export async function createCheckoutAction(
     console.error('[checkout] failed', error);
     return {
       error:
-        'No pudimos conectar con el atelier. Revisá tu conexión e intentá de nuevo.',
+        'No pudimos conectar con Casa Wiki. Revisá tu conexión e intentá de nuevo.',
     };
   }
 }

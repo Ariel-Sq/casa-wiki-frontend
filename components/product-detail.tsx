@@ -55,7 +55,6 @@ export function ProductDetail({ product }: { product: ProductView }) {
     ? variation.images
     : product.variations.flatMap((item) => item.images).slice(0, 1);
 
-  const compareAt = variation ? Math.round(variation.price * 1.15) : 0;
   const maxStock = Math.max(1, variation?.stock ?? 1);
 
   async function handleAdd() {
@@ -100,7 +99,7 @@ export function ProductDetail({ product }: { product: ProductView }) {
             )}
             {product.specifications.length > 0 && (
               <div className="absolute left-4 top-4 rounded-full bg-surface/90 px-3 py-1.5 text-[9.5px] font-semibold uppercase tracking-[0.12em] text-olive-dark backdrop-blur">
-                Hecho a mano en Argentina
+                Fabricación nacional
               </div>
             )}
           </div>
@@ -132,7 +131,7 @@ export function ProductDetail({ product }: { product: ProductView }) {
           </h1>
           {variation?.attributes?.material && (
             <p className="mt-2 text-[13px] text-muted">
-              {variation.attributes.material} · Acabado natural
+              {variation.attributes.material} · Laca poliuretánica
             </p>
           )}
 
@@ -140,10 +139,7 @@ export function ProductDetail({ product }: { product: ProductView }) {
             <p className="font-display text-[32px] leading-none">
               {formatPrice(variation?.price ?? 0)}
             </p>
-            <p className="pb-1 text-[14px] text-muted line-through">{formatPrice(compareAt)}</p>
-            <span className="mb-1 rounded-full bg-olive-pale px-2.5 py-1 text-[10px] font-semibold text-olive">
-              10% OFF transferencia
-            </span>
+
           </div>
           <p className="mt-1 text-[12px] text-muted">
             6 cuotas sin interés de {formatPrice((variation?.price ?? 0) / 6)}
@@ -156,7 +152,7 @@ export function ProductDetail({ product }: { product: ProductView }) {
             )}
           >
             {product.description ||
-              'Una pieza concebida en el atelier con maderas nobles certificadas y terminaciones naturales, pensada para acompañar el paso del tiempo.'}
+              'Mueble de álamo macizo con terminación en laca poliuretánica, fabricado en Argentina. Simple, resistente y pensado para el uso diario.'}
           </p>
           {product.description.length > 220 && (
             <button
@@ -263,9 +259,9 @@ export function ProductDetail({ product }: { product: ProductView }) {
 
           <div className="mt-6 grid grid-cols-3 gap-2 border-y border-line py-4 text-center">
             {[
-              { icon: TreePine, label: 'Madera FSC®' },
-              { icon: Truck, label: 'Envío gratis' },
-              { icon: ShieldCheck, label: 'Garantía 5 años' },
+              { icon: TreePine, label: 'Álamo macizo' },
+              { icon: Truck, label: 'Envío coordinado' },
+              { icon: ShieldCheck, label: 'Garantía 6 meses' },
             ].map((item) => (
               <div key={item.label} className="flex flex-col items-center gap-1.5">
                 <item.icon className="size-5 text-olive" />
@@ -302,8 +298,8 @@ export function ProductDetail({ product }: { product: ProductView }) {
                 <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-2.5 text-[12px] leading-relaxed text-muted">
-                Madera maciza con acabado en aceite natural libre de solventes. Limpiar con
-                paño seco; evitar exposición directa al sol y productos abrasivos. Cada pieza
+                Álamo macizo con terminación en laca poliuretánica. Limpiar con paño húmedo y
+                secar; evitar exposición directa al sol y productos abrasivos. Cada pieza
                 puede variar levemente en veta y tono por su origen natural.
               </p>
             </details>
@@ -313,9 +309,8 @@ export function ProductDetail({ product }: { product: ProductView }) {
                 <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-2.5 text-[12px] leading-relaxed text-muted">
-                Coordinamos la entrega por WhatsApp en 4 a 7 días hábiles. El armado en
-                destino está incluido en CABA y GBA; para el interior se cotiza según
-                localidad.
+                Coordinamos entrega y armado por WhatsApp. El costo y el plazo dependen de
+                tu localidad.
               </p>
             </details>
           </div>

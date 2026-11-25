@@ -57,10 +57,10 @@ export default async function CuentaPage() {
 
           <div className="mt-6 rounded-xl bg-surface-low p-4">
             <p className="flex items-center gap-1.5 text-[12px] font-semibold">
-              <Sparkles className="size-3.5 text-clay" /> Atención de atelier
+              <Sparkles className="size-3.5 text-clay" /> Atención personalizada
             </p>
             <p className="mt-1 text-[11px] leading-snug text-muted">
-              ¿Necesitás una medida especial o combinar piezas? Escribinos y lo vemos
+              ¿Necesitás combinar piezas o consultar medidas? Escribinos y lo vemos
               juntos.
             </p>
             <a

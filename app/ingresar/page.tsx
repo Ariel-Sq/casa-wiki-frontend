@@ -26,7 +26,7 @@ const BENEFITS = [
   {
     icon: MessageCircle,
     title: 'Coordinación por WhatsApp',
-    copy: 'Confirmación de entregas, horarios y armado con el atelier.',
+    copy: 'Confirmación de entregas, horarios y armado con nosotros.',
   },
   {
     icon: BadgeCheck,
@@ -40,7 +40,7 @@ const BENEFITS = [
   },
   {
     icon: Sparkles,
-    title: 'Atención de atelier',
+    title: 'Atención personalizada',
     copy: 'Asesoramiento en medidas, materiales y terminaciones.',
   },
 ];
@@ -110,7 +110,7 @@ export default async function IngresarPage() {
             </span>
             <p className="mt-3 font-display text-[30px] leading-none">Casa Wiki</p>
             <p className="mt-2 text-[8.5px] font-semibold uppercase tracking-[0.32em] text-muted">
-              Mobiliario · Atelier
+              Mobiliario · Fabricación nacional
             </p>
           </div>
 

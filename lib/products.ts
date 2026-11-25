@@ -1,5 +1,4 @@
 import { backendFetch, backendImageUrl } from './backend';
-import { MERCADOPAGO_SURCHARGE_RATE } from './constants';
 import type { Category, ProductTemplate, ProductVariation } from './types';
 
 export interface CatalogProduct {
@@ -7,7 +6,6 @@ export interface CatalogProduct {
   slug: string;
   name: string;
   price: number;
-  compareAt: number;
   material: string;
   category: string;
   categorySlug: string;
@@ -49,7 +47,6 @@ export function toCatalogProduct(
     slug: template.slug,
     name: template.name,
     price,
-    compareAt: Math.round(price * (1 + MERCADOPAGO_SURCHARGE_RATE)),
     material: cheapest.attributes?.material ?? '',
     category: category?.name ?? 'Muebles',
     categorySlug: category?.slug ?? 'muebles',

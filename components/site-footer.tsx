@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Leaf, Instagram, Mail, MessageCircle, ShieldCheck, TreePine } from 'lucide-react';
+import { Leaf, Instagram, Mail, MessageCircle, ShieldCheck, Hammer } from 'lucide-react';
 import { NewsletterForm } from './newsletter-form';
 
 export function SiteFooter() {
@@ -14,13 +14,12 @@ export function SiteFooter() {
             <span className="font-display text-2xl">Casa Wiki</span>
           </Link>
           <p className="mt-4 max-w-sm text-[13.5px] leading-relaxed text-muted">
-            Atelier de diseño contemporáneo y ebanistería responsable. Creamos piezas
-            atemporales concebidas con maderas macizas de origen sustentable y tapizados
-            artesanales de tacto sereno.
+            Mueblería de álamo macizo con fabricación nacional. Muebles simples,
+            resistentes y terminados con laca poliuretánica.
           </p>
           <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-2 text-[10.5px] font-semibold uppercase tracking-[0.1em] text-olive">
-            <TreePine className="size-4" />
-            Certificación forestal sustentable FSC®
+            <Hammer className="size-4" />
+            Fabricación nacional
           </div>
         </div>
 
@@ -42,7 +41,7 @@ export function SiteFooter() {
             Atención al cliente
           </h3>
           <ul className="mt-4 space-y-2.5 text-[13px] text-muted">
-            <li><Link href="/#manifiesto" className="hover:text-olive">Nuestro proceso</Link></li>
+            <li><Link href="/#manifiesto" className="hover:text-olive">Nosotros</Link></li>
             <li><Link href="/cuenta" className="hover:text-olive">Mis pedidos</Link></li>
             <li><a href="https://wa.me/5491145892000" className="hover:text-olive">Envíos y entregas</a></li>
             <li><a href="https://wa.me/5491145892000" className="hover:text-olive">Cambios y devoluciones</a></li>
@@ -55,7 +54,7 @@ export function SiteFooter() {
             Novedades
           </h3>
           <p className="mt-4 text-[13px] leading-relaxed text-muted">
-            Enterate de nuevas piezas, lanzamientos y novedades del atelier.
+            Enterate de nuevas piezas, lanzamientos y novedades de Casa Wiki.
           </p>
           <NewsletterForm />
           <div className="mt-5 flex items-center gap-3 text-muted">
@@ -80,7 +79,7 @@ export function SiteFooter() {
               <ShieldCheck className="size-3.5" /> Pago seguro SSL
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <TreePine className="size-3.5" /> Compromiso huella cero
+              <Hammer className="size-3.5" /> Fabricación nacional
             </span>
           </div>
         </div>

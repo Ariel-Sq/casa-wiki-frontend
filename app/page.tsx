@@ -50,35 +50,7 @@ const SPACES = [
   },
 ];
 
-const TESTIMONIALS = [
-  {
-    quote:
-      'El sofa modular transformó el living por completo. La calidad de la madera y el lino se sienten en cada detalle. La coordinación por WhatsApp fue impecable.',
-    name: 'Valentina M.',
-    place: 'Palermo, Buenos Aires',
-    piece: 'Sofá Modular Alba',
-    image:
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    quote:
-      'Buscábamos una mesa para toda la vida. Nos asesoraron con las medidas, la madera y el acabado. Llegó en el plazo prometido y armada.',
-    name: 'Tomás & Lucía',
-    place: 'Villa Allende, Córdoba',
-    piece: 'Mesa de Comedor Roble',
-    image:
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    quote:
-      'El acompañamiento postventa es real. A los meses volvimos a pedir dos mesas de luz y el mismo equipo se ocupó de que combinen perfecto.',
-    name: 'Carolina R.',
-    place: 'Pilar, Buenos Aires',
-    piece: 'Mesas de Luz Nórdicas',
-    image:
-      'https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=900&q=80',
-  },
-];
+
 
 export default async function HomePage() {
   const products = await getFeaturedProducts(8);
@@ -103,15 +75,15 @@ export default async function HomePage() {
               <div className="max-w-2xl text-white">
                 <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] backdrop-blur-md">
                   <span className="size-1.5 rounded-full bg-olive-soft" />
-                  Lanzamiento exclusivo · Solsticio 2026
+                  Nueva colección · 2026
                 </span>
                 <h1 className="mt-5 font-display text-[42px] leading-[1.02] tracking-tight text-balance md:text-[58px]">
                   Diseño consciente para hogares con alma.
                 </h1>
                 <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-white/80 md:text-[16.5px]">
-                  Muebles artesanales concebidos en maderas nobles certificadas y
-                  tapizados orgánicos. Descubrí piezas que celebran el sosiego y la
-                  belleza de lo auténtico.
+                  Muebles artesanales de álamo macizo, fabricados en Argentina y
+                  terminados con laca poliuretánica. Piezas simples para acompañar el
+                  uso de todos los días.
                 </p>
                 <div className="mt-7 flex flex-wrap items-center gap-3">
                   <Link href="/catalogo" className="btn btn-primary px-7 py-3.5">
@@ -142,7 +114,7 @@ export default async function HomePage() {
                   {products[0].name}
                 </p>
                 <p className="mt-1 text-[11px] text-white/75">
-                  {products[0].material} · Hecha a mano
+                  {products[0].material} · Fabricación nacional
                 </p>
               </div>
             )}
@@ -152,18 +124,18 @@ export default async function HomePage() {
             {[
               {
                 icon: TreePine,
-                title: '100% Madera Certificada',
-                copy: 'Bosques nativos reforestados bajo normas FSC® internacionales.',
+                title: 'Álamo macizo',
+                copy: 'Muebles de álamo macizo, fabricados en Argentina.',
               },
               {
                 icon: ShieldCheck,
-                title: 'Garantía Estructural 5 Años',
-                copy: 'Ebanistería de espiga y caja pensada para perdurar generaciones.',
+                title: 'Garantía 6 Meses',
+                copy: 'Cobertura sobre estructura y terminación.',
               },
               {
                 icon: MessageCircle,
                 title: 'Coordinación por WhatsApp',
-                copy: 'Asesoramiento directo del atelier, entregas y armado coordinado.',
+                copy: 'Atención directa de Casa Wiki, entregas y armado coordinados.',
               },
             ].map((item) => (
               <div
@@ -278,15 +250,15 @@ export default async function HomePage() {
           <div className="relative aspect-[5/4] overflow-hidden rounded-2xl">
             <Image
               src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=1400&q=80"
-              alt="Ebanista trabajando la madera en el atelier"
+              alt="Taller de carpintería trabajando la madera"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
             <div className="absolute bottom-4 left-4 max-w-[280px] rounded-xl bg-background/95 p-4 shadow-soft backdrop-blur">
               <p className="font-display text-[19px] italic leading-snug">
-                “El atelier trabaja la madera como material de legado: noble,
-                honesto y para siempre.”
+                “Trabajamos el álamo con criterio: simple, honesto y pensado para el
+                uso diario.”
               </p>
               <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-olive">
                 Manifiesto Casa Wiki
@@ -297,12 +269,12 @@ export default async function HomePage() {
           <div>
             <p className="eyebrow text-olive">El manifiesto Casa Wiki</p>
             <h2 className="mt-2 font-display text-[36px] leading-tight md:text-[46px]">
-              Ebanistería honesta: donde la materia prima dicta la forma.
+              Muebles artesanales de álamo macizo.
             </h2>
             <p className="mt-5 text-[14.5px] leading-relaxed text-muted">
-              Cada pieza nace de un diálogo entre la madera y quien la trabaja.
-              Seleccionamos tablas por su veta, respetamos sus tiempos y dejamos que
-              el uso termine de pulir lo que la mano empezó.
+              Fabricamos en Argentina muebles simples y resistentes. Elegimos álamo
+              macizo y lo terminamos con laca poliuretánica para que aguante el uso de
+              todos los días.
             </p>
 
             <div className="mt-6 space-y-4">
@@ -311,9 +283,9 @@ export default async function HomePage() {
                   <TreePine className="size-4.5" />
                 </span>
                 <div>
-                  <h3 className="text-[13.5px] font-semibold">Cero desperdicio</h3>
+                  <h3 className="text-[13.5px] font-semibold">Álamo macizo</h3>
                   <p className="text-[12.5px] leading-snug text-muted">
-                    Aprovechamos cada retazo para herrajes, detalles y piezas menores.
+                    Una sola madera, sin mezclas ni atajos.
                   </p>
                 </div>
               </div>
@@ -322,9 +294,9 @@ export default async function HomePage() {
                   <Sparkles className="size-4.5" />
                 </span>
                 <div>
-                  <h3 className="text-[13.5px] font-semibold">Método a la medida</h3>
+                  <h3 className="text-[13.5px] font-semibold">Terminación duradera</h3>
                   <p className="text-[12.5px] leading-snug text-muted">
-                    Adaptamos medidas, maderas y tapizados a tu espacio real.
+                    Laca poliuretánica para proteger la superficie del uso diario.
                   </p>
                 </div>
               </div>
@@ -332,66 +304,20 @@ export default async function HomePage() {
 
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <Link href="/catalogo" className="btn btn-primary px-7 py-3.5">
-                Conocer nuestro proceso
+                Ver catálogo
                 <ArrowRight className="size-4" />
               </Link>
               <Link
-                href="/ingresar"
+                href="/catalogo?categoria=mesas-de-comedor"
                 className="text-[12.5px] font-semibold text-olive underline underline-offset-4"
               >
-                Proyectos arquitectónicos
+                Ver mesas
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonios */}
-      <section className="bg-surface-low py-16 md:py-20">
-        <div className="shell">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow text-olive">Comunidad & espacios</p>
-            <h2 className="mt-2 font-display text-[34px] leading-tight md:text-[42px]">
-              Casas reales. Vidas reales.
-            </h2>
-            <p className="mt-3 text-[13.5px] leading-relaxed text-muted">
-              Una mirada íntima a los hogares donde nuestras piezas encontraron su
-              lugar. Compartí tu espacio con #MiCasaWiki.
-            </p>
-          </div>
-
-          <div className="mt-9 grid gap-4 md:grid-cols-3">
-            {TESTIMONIALS.map((testimonial) => (
-              <figure
-                key={testimonial.name}
-                className="overflow-hidden rounded-xl border border-line bg-surface"
-              >
-                <div className="relative aspect-[4/3]">
-                  <Image
-                    src={testimonial.image}
-                    alt={`Casa de ${testimonial.name}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-                <figcaption className="p-5">
-                  <blockquote className="text-[13px] leading-relaxed text-ink/85">
-                    “{testimonial.quote}”
-                  </blockquote>
-                  <div className="mt-4 border-t border-line pt-3">
-                    <p className="text-[12.5px] font-semibold">{testimonial.name}</p>
-                    <p className="text-[11px] text-muted">{testimonial.place}</p>
-                    <p className="mt-1 text-[10.5px] uppercase tracking-[0.1em] text-olive">
-                      {testimonial.piece}
-                    </p>
-                  </div>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }

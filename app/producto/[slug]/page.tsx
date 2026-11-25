@@ -20,7 +20,7 @@ export async function generateMetadata({
     title: template.name,
     description:
       template.description ??
-      `${template.name} — mobiliario artesanal Casa Wiki en maderas nobles certificadas.`,
+      `${template.name} — mueble de álamo macizo de Casa Wiki, fabricación nacional.`,
   };
 }
 

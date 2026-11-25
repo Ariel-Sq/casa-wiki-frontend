@@ -50,11 +50,11 @@ export function ProductCard({
         <div className="pointer-events-none absolute left-3 top-3 flex flex-col items-start gap-1.5">
           {product.featured && (
             <span className="rounded-full bg-olive-soft px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-olive-dark">
-              Edición de autor
+              Nuevo
             </span>
           )}
           <span className="rounded-full bg-surface/90 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-olive-dark backdrop-blur">
-            Envío gratis
+            Fabricación nacional
           </span>
         </div>
 
@@ -85,9 +85,6 @@ export function ProductCard({
 
         <div className="mt-2.5 flex items-baseline gap-2">
           <p className="text-[16px] font-semibold">{formatPrice(product.price)}</p>
-          <p className="text-[11.5px] text-muted line-through">
-            {formatPrice(product.compareAt)}
-          </p>
         </div>
         <p className="mt-0.5 text-[10.5px] text-muted">
           6 cuotas sin interés de {formatPrice(product.price / 6)}

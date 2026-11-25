@@ -94,8 +94,8 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
           Coordinemos tu pieza
         </h1>
         <p className="mt-2 max-w-xl text-[13.5px] leading-relaxed text-muted">
-          Completá tus datos y elegí cómo querés abonar. Un asesor del atelier te
-          contactará por WhatsApp para confirmar entrega, horarios y armado.
+          Completá tus datos y elegí cómo querés abonar. Nuestro equipo te contactará
+          por WhatsApp para confirmar entrega, horarios y armado.
         </p>
 
         <section className="mt-8 rounded-xl border border-line bg-surface p-5 md:p-6">
@@ -170,7 +170,7 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
               <span>
                 <span className="block text-[13px] font-semibold">Envío a domicilio</span>
                 <span className="mt-0.5 block text-[11px] text-muted">
-                  Gratis a todo el país. Armado incluido en CABA y GBA.
+                  Coordinamos costo y plazo según tu localidad.
                 </span>
               </span>
             </button>
@@ -186,9 +186,9 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
             >
               <Store className="mt-0.5 size-5 text-olive" />
               <span>
-                <span className="block text-[13px] font-semibold">Retiro en atelier</span>
+                <span className="block text-[13px] font-semibold">Retiro en nuestro depósito</span>
                 <span className="mt-0.5 block text-[11px] text-muted">
-                  Palermo, Buenos Aires. Coordinamos día y horario.
+                  Nuestro depósito en Buenos Aires. Coordinamos día y horario.
                 </span>
               </span>
             </button>
@@ -300,7 +300,7 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
             onChange={(event) => setTerms(event.target.checked)}
             className="mt-0.5 accent-olive"
           />
-          Acepto los términos de atelier, la política de privacidad y la coordinación de
+          Acepto los términos de compra, la política de privacidad y la coordinación de
           entrega por WhatsApp.
         </label>
       </div>
@@ -339,7 +339,7 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
             </div>
             <div className="flex justify-between">
               <span className="text-muted">Envío</span>
-              <span className="font-semibold text-olive">Gratis</span>
+              <span className="font-semibold text-olive">A coordinar</span>
             </div>
             {surcharge > 0 && (
               <div className="flex justify-between">
@@ -380,7 +380,7 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
               <ShieldCheck className="size-3.5 text-olive" /> Pago seguro SSL 256-bit
             </p>
             <p className="flex items-center gap-2">
-              <Check className="size-3.5 text-olive" /> Garantía estructural de 5 años
+              <Check className="size-3.5 text-olive" /> Garantía de 6 meses
             </p>
             <p className="flex items-center gap-2">
               <MessageCircle className="size-3.5 text-olive" /> Seguimiento por WhatsApp

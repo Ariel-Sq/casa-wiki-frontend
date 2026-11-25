@@ -42,7 +42,7 @@ export function CatalogClient({
   const [query, setQuery] = useState(initialQuery);
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [onlyStock, setOnlyStock] = useState(false);
-  const [sort, setSort] = useState('curaduria');
+  const [sort, setSort] = useState('recomendados');
   const [view, setView] = useState<'grid' | 'list'>('grid');
   const [page, setPage] = useState(1);
   const [mobileFilters, setMobileFilters] = useState(false);
@@ -274,21 +274,21 @@ export function CatalogClient({
       </nav>
 
       <header className="mt-6 border-b border-line pb-7">
-        <p className="eyebrow text-olive">Curandería otoño 2026</p>
+        <p className="eyebrow text-olive">Colección 2026</p>
         <h1 className="mt-2 font-display text-[38px] leading-tight md:text-[50px]">
           {activeCategory ? `Colección ${activeCategory.name}` : 'Catálogo de muebles'}
         </h1>
         <div className="mt-3 flex flex-col justify-between gap-3 md:flex-row md:items-end">
           <p className="max-w-2xl text-[13.5px] leading-relaxed text-muted">
-            Piezas contemporáneas diseñadas para resistir el paso del tiempo. Explorá
-            acabados en madera maciza certificada, lino puro y tapizados de tacto orgánico.
+            Muebles de álamo macizo con fabricación nacional y terminación en laca
+            poliuretánica. Medidas claras, stock disponible y entrega coordinada.
           </p>
           <div className="flex items-center gap-4 text-[11px] text-muted">
             <span className="inline-flex items-center gap-1.5">
               <span className="size-1.5 rounded-full bg-olive" />
-              {filtered.length} piezas de atelier
+              {filtered.length} muebles disponibles
             </span>
-            <span className="hidden sm:inline">Hecho a mano en Argentina</span>
+            <span className="hidden sm:inline">Fabricación nacional</span>
           </div>
         </div>
       </header>
@@ -319,7 +319,7 @@ export function CatalogClient({
                 onChange={(event) => setSort(event.target.value)}
                 className="appearance-none rounded-full border border-line bg-surface py-2 pl-3 pr-8 text-[11.5px] font-semibold text-ink outline-none"
               >
-                <option value="curaduria">Curaduría recomendada</option>
+                <option value="recomendados">Recomendados</option>
                 <option value="precio-asc">Menor precio</option>
                 <option value="precio-desc">Mayor precio</option>
                 <option value="nombre">Nombre A–Z</option>
@@ -392,11 +392,11 @@ export function CatalogClient({
                     <div className="pointer-events-none absolute left-2.5 top-2.5 flex flex-col items-start gap-1">
                       {product.featured && (
                         <span className="rounded-full bg-olive-soft px-2 py-0.5 text-[8.5px] font-bold uppercase tracking-[0.1em] text-olive-dark">
-                          Edición de autor
+                          Nuevo
                         </span>
                       )}
                       <span className="rounded-full bg-surface/90 px-2 py-0.5 text-[8.5px] font-bold uppercase tracking-[0.1em] text-olive-dark backdrop-blur">
-                        Envío gratis
+                        Fabricación nacional
                       </span>
                     </div>
                     <button
@@ -421,9 +421,6 @@ export function CatalogClient({
                     <p className="mt-0.5 text-[11px] text-muted">{product.material}</p>
                     <div className="mt-2 flex items-baseline gap-2">
                       <p className="text-[15px] font-semibold">{formatPrice(product.price)}</p>
-                      <p className="text-[10.5px] text-muted line-through">
-                        {formatPrice(product.compareAt)}
-                      </p>
                     </div>
                     <p className="text-[10px] text-muted">
                       6 cuotas sin interés de {formatPrice(product.price / 6)}
@@ -530,14 +527,14 @@ export function CatalogClient({
               </span>
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-olive">
-                  Servicio atelier Casa Wiki
+                  Servicio Casa Wiki
                 </p>
                 <p className="mt-1 font-display text-[22px] leading-snug">
                   ¿Dudas con las medidas y proporción de tu espacio?
                 </p>
                 <p className="mt-1 max-w-xl text-[12px] text-muted">
-                  Nuestros arquitectos te asesoran sin costo en la elección de maderas,
-                  texturas de lino y modulación personalizada.
+                  Nuestro equipo te asesora sin costo en la elección de medidas y
+                  terminaciones.
                 </p>
               </div>
             </div>

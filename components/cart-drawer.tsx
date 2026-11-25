@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { Minus, Plus, ShoppingBag, Trash2, X } from 'lucide-react';
 import { useCart } from './cart-provider';
-import { FREE_SHIPPING_THRESHOLD, MAX_INSTALLMENTS } from '@/lib/constants';
+import { MAX_INSTALLMENTS } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 
 export function CartDrawer() {
@@ -21,9 +21,6 @@ export function CartDrawer() {
   }, [open]);
 
   if (!open) return null;
-
-  const missing = Math.max(0, FREE_SHIPPING_THRESHOLD - cart.subtotal);
-  const progress = Math.min(100, (cart.subtotal / FREE_SHIPPING_THRESHOLD) * 100);
 
   return (
     <div className="fixed inset-0 z-50">
@@ -45,7 +42,7 @@ export function CartDrawer() {
               <p className="mt-1.5 text-[12px] text-muted">
                 {cart.itemCount === 0
                   ? 'Todavía no elegiste ninguna pieza'
-                  : `${cart.itemCount} ${cart.itemCount === 1 ? 'pieza seleccionada' : 'piezas seleccionadas'} en tu atelier`}
+                  : `${cart.itemCount} ${cart.itemCount === 1 ? 'pieza seleccionada' : 'piezas seleccionadas'} en tu carrito`}
               </p>
             </div>
           </div>
@@ -57,23 +54,6 @@ export function CartDrawer() {
           >
             <X className="size-4" />
           </button>
-        </div>
-
-        <div className="border-b border-line px-6 py-4">
-          <div className="flex items-center justify-between text-[11.5px] font-semibold">
-            <span className="text-olive">
-              {missing === 0
-                ? '¡Genial! Tenés envío gratis desbloqueado'
-                : `Te faltan ${formatPrice(missing)} para el envío gratis`}
-            </span>
-            <span className="text-muted">{Math.round(progress)}%</span>
-          </div>
-          <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-surface-mid">
-            <div
-              className="h-full rounded-full bg-olive transition-all duration-500"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
         </div>
 
         <div className="flex-1 overflow-y-auto px-6 py-5">
@@ -183,9 +163,7 @@ export function CartDrawer() {
               </div>
               <div className="flex justify-between">
                 <span className="text-muted">Envío especial a domicilio</span>
-                <span className="font-semibold text-olive">
-                  {missing === 0 ? 'GRATIS' : 'A coordinar'}
-                </span>
+                <span className="font-semibold text-olive">A coordinar</span>
               </div>
             </div>
 
@@ -229,7 +207,7 @@ export function CartDrawer() {
               <span>AMEX</span>
             </div>
             <p className="mt-1.5 text-center text-[9.5px] text-muted">
-              Encriptación SSL 256-bit · 10% OFF extra abonando con transferencia
+              Pago seguro SSL 256-bit · Coordinación por WhatsApp
             </p>
           </div>
         )}

@@ -33,7 +33,7 @@ export function NewsletterForm() {
       </button>
       {done && (
         <p className="mt-2 text-[11.5px] text-olive">
-          Te vamos a escribir con las novedades del atelier.
+          Te vamos a escribir con las novedades de Casa Wiki.
         </p>
       )}
     </form>

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: '%s · Casa Wiki',
   },
   description:
-    'Muebles artesanales en maderas nobles certificadas y tapizados orgánicos. Piezas atemporales para hogares con alma, coordinadas por WhatsApp.',
+    'Muebles de álamo macizo con fabricación nacional y terminaciones en laca poliuretánica. Piezas simples para todos los días, coordinadas por WhatsApp.',
   keywords: [
     'muebles artesanales',
     'mobiliario de autor',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: 'Casa Wiki',
     title: 'Casa Wiki — Mobiliario artesanal de autor',
     description:
-      'Diseño consciente para hogares con alma. Muebles artesanales en maderas nobles y tapizados orgánicos.',
+      'Diseño consciente para hogares con alma. Muebles de álamo macizo, fabricación nacional y terminación en laca poliuretánica.',
   },
 };
 
