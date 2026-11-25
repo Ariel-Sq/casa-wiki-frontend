@@ -22,7 +22,7 @@ Repositorios: `Ariel-Sq/casa-wiki-frontend`, `Ariel-Sq/casa-wiki-backend`, `Arie
 
 - Node 22 (`.nvmrc`)
 - pnpm
-- `casa-wiki-backend` corriendo en `http://localhost:8080` con la base local (`ecommerce_db`)
+- `casa-wiki-backend` corriendo en `http://localhost:8081` con la base local `casawiki_db`
 
 ## Puesta en marcha
 
@@ -35,7 +35,8 @@ pnpm dev
 ```
 
 - Frontend: http://localhost:3002
-- Backend: http://localhost:8080/api (Swagger en `/api/docs`)
+- Admin: http://localhost:3004
+- Backend Casa Wiki: http://localhost:8081/api (Swagger en `/api/docs`)
 
 > El puerto 3002 se usa para no chocar con `legas-frontend` (3000) ni con el servicio que ya ocupa 3001.
 
