@@ -392,33 +392,6 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Club */}
-      <section className="shell py-16">
-        <div className="flex flex-col items-start justify-between gap-6 rounded-2xl bg-olive px-6 py-8 text-white md:flex-row md:items-center md:px-10">
-          <div className="flex items-center gap-4">
-            <span className="grid size-12 shrink-0 place-items-center rounded-full bg-white/15">
-              <Sparkles className="size-6" />
-            </span>
-            <div>
-              <p className="font-display text-[24px] leading-tight">
-                Sumate al Club Casa Wiki
-              </p>
-              <p className="mt-1 text-[12.5px] text-white/75">
-                10% OFF en tu primera pieza, lanzamientos privados y asesoramiento
-                de atelier.
-              </p>
-            </div>
-          </div>
-          <Link
-            href="/ingresar"
-            className="btn bg-white px-7 py-3.5 text-olive-dark hover:bg-olive-soft"
-          >
-            Quiero ser parte
-            <ArrowRight className="size-4" />
-          </Link>
-        </div>
-      </section>
     </>
   );
 }

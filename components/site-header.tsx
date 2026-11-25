@@ -22,7 +22,6 @@ const NAV = [
   { label: 'Inicio', href: '/' },
   { label: 'Catálogo & Colecciones', href: '/catalogo' },
   { label: 'Nuestro atelier', href: '/#manifiesto' },
-  { label: 'Club Casa Wiki', href: '/ingresar' },
 ];
 
 export function SiteHeader({

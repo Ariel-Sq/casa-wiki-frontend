@@ -52,11 +52,10 @@ export function SiteFooter() {
 
         <div>
           <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink">
-            Club Casa Wiki
+            Novedades
           </h3>
           <p className="mt-4 text-[13px] leading-relaxed text-muted">
-            Sumate y obtené 10% OFF en tu primera pieza, acceso a lanzamientos y eventos
-            privados en el atelier.
+            Enterate de nuevas piezas, lanzamientos y novedades del atelier.
           </p>
           <NewsletterForm />
           <div className="mt-5 flex items-center gap-3 text-muted">

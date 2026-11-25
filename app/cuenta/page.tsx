@@ -45,17 +45,13 @@ export default async function CuentaPage() {
           <p className="mt-1 text-[12px] text-muted">{session.user.email}</p>
 
           <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-olive-pale px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-olive-dark">
-            <Leaf className="size-3.5" /> Miembro del Club
+            <Leaf className="size-3.5" /> Cuenta Casa Wiki
           </div>
 
           <div className="mt-6 space-y-2 border-t border-line pt-4 text-[12.5px]">
             <p className="flex items-center justify-between">
               <span className="text-muted">Pedidos</span>
               <span className="font-semibold">{orders.length}</span>
-            </p>
-            <p className="flex items-center justify-between">
-              <span className="text-muted">Beneficio club</span>
-              <span className="font-semibold text-olive">10% OFF</span>
             </p>
           </div>
 

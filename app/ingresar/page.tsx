@@ -17,31 +17,31 @@ import { LoginPanel } from '@/components/login-panel';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Ingresar & Club Casa Wiki',
+  title: 'Ingresar',
   description:
-    'Accedé a tu cuenta Casa Wiki y sumate al club: beneficios exclusivos, lanzamientos privados y asesoramiento personalizado por WhatsApp.',
+    'Accedé a tu cuenta Casa Wiki para seguir tus pedidos y coordinar entregas y armado por WhatsApp.',
 };
 
 const BENEFITS = [
   {
     icon: MessageCircle,
-    title: 'Canal prioritario por chat',
-    copy: 'Contacto directo y ágil con nuestros asesores de atelier.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Asesoría a medida',
-    copy: 'Recomendaciones de texturas, medidas y paletas para tus espacios.',
+    title: 'Coordinación por WhatsApp',
+    copy: 'Confirmación de entregas, horarios y armado con el atelier.',
   },
   {
     icon: BadgeCheck,
-    title: 'Coordinación de entregas',
-    copy: 'Confirmación de franjas horarias directamente por WhatsApp.',
+    title: 'Seguimiento de pedidos',
+    copy: 'Consultá el estado y el historial de tus compras desde tu cuenta.',
   },
   {
     icon: UserRound,
-    title: 'Acompañamiento postventa',
-    copy: 'Resolución inmediata con tu especialista asignado.',
+    title: 'Tus datos guardados',
+    copy: 'Direcciones y datos de contacto listos para tu próxima compra.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Atención de atelier',
+    copy: 'Asesoramiento en medidas, materiales y terminaciones.',
   },
 ];
 
@@ -71,11 +71,11 @@ export default async function IngresarPage() {
 
           <div className="relative z-10 flex h-full flex-col">
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 text-[9.5px] font-semibold uppercase tracking-[0.16em] backdrop-blur">
-              <Leaf className="size-3.5" /> Club Casa Wiki
+              <Leaf className="size-3.5" /> Tu cuenta Casa Wiki
             </span>
 
             <h1 className="mt-10 max-w-md font-display text-[38px] leading-[1.06] md:text-[46px]">
-              Atención y seguimiento personalizado vía WhatsApp.
+              Todo lo que necesitás para tu compra, en un solo lugar.
             </h1>
 
             <ul className="mt-8 space-y-5">
