@@ -69,7 +69,7 @@ export default async function HomePage() {
               sizes="100vw"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#12200f]/90 via-[#12200f]/35 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1c33]/90 via-[#0a1c33]/35 to-transparent" />
 
             <div className="relative z-10 flex min-h-[620px] flex-col justify-end p-6 md:p-12 lg:min-h-[700px]">
               <div className="max-w-2xl text-white">
@@ -106,7 +106,7 @@ export default async function HomePage() {
             </div>
 
             {products[0] && (
-              <div className="absolute right-8 top-8 hidden w-[240px] rounded-xl border border-white/20 bg-[#12200f]/45 p-4 text-right text-white backdrop-blur-md lg:block">
+              <div className="absolute right-8 top-8 hidden w-[240px] rounded-xl border border-white/20 bg-[#0a1c33]/45 p-4 text-right text-white backdrop-blur-md lg:block">
                 <p className="text-[9.5px] font-semibold uppercase tracking-[0.18em] text-olive-soft">
                   Pieza central
                 </p>
@@ -142,7 +142,7 @@ export default async function HomePage() {
                 key={item.title}
                 className="flex items-center gap-4 rounded-xl border border-line bg-surface p-5 shadow-soft"
               >
-                <span className="grid size-12 shrink-0 place-items-center rounded-full bg-olive-soft text-olive">
+                <span className="grid size-12 shrink-0 place-items-center rounded-full bg-olive-soft text-olive-dark">
                   <item.icon className="size-6" />
                 </span>
                 <div>
@@ -159,14 +159,14 @@ export default async function HomePage() {
       <section className="shell py-16 md:py-20">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div className="max-w-xl">
-            <p className="eyebrow text-olive">Atmósferas habitables</p>
+            <p className="eyebrow text-olive-dark">Atmósferas habitables</p>
             <h2 className="mt-2 font-display text-[34px] leading-tight md:text-[42px]">
               Explorá por espacios y piezas clave
             </h2>
           </div>
           <Link
             href="/catalogo"
-            className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-olive hover:text-olive-dark"
+            className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-olive-dark hover:text-olive-dark"
           >
             Ver todas las colecciones
             <ArrowUpRight className="size-4" />
@@ -187,7 +187,7 @@ export default async function HomePage() {
                 sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#151a12]/85 via-[#151a12]/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1c33]/85 via-[#0a1c33]/20 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-4 text-white md:p-5">
                 <span className="inline-block rounded-full bg-white/20 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.12em] backdrop-blur">
                   {space.count}
@@ -207,7 +207,7 @@ export default async function HomePage() {
         <div className="shell">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div>
-              <p className="eyebrow text-olive">Colección vigente</p>
+              <p className="eyebrow text-olive-dark">Colección vigente</p>
               <h2 className="mt-2 font-display text-[34px] leading-tight md:text-[42px]">
                 Piezas esenciales para contemplar
               </h2>
@@ -220,7 +220,7 @@ export default async function HomePage() {
                   className={
                     index === 0
                       ? 'rounded-full bg-olive px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-white'
-                      : 'rounded-full border border-line bg-surface px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted hover:border-olive hover:text-olive'
+                      : 'rounded-full border border-line bg-surface px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted hover:border-olive hover:text-olive-dark'
                   }
                 >
                   {tab}
@@ -260,14 +260,14 @@ export default async function HomePage() {
                 “Trabajamos el álamo con criterio: simple, honesto y pensado para el
                 uso diario.”
               </p>
-              <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-olive">
+              <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-olive-dark">
                 Manifiesto Casa Wiki
               </p>
             </div>
           </div>
 
           <div>
-            <p className="eyebrow text-olive">El manifiesto Casa Wiki</p>
+            <p className="eyebrow text-olive-dark">El manifiesto Casa Wiki</p>
             <h2 className="mt-2 font-display text-[36px] leading-tight md:text-[46px]">
               Muebles artesanales de álamo macizo.
             </h2>
@@ -279,7 +279,7 @@ export default async function HomePage() {
 
             <div className="mt-6 space-y-4">
               <div className="flex gap-3">
-                <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-olive-soft text-olive">
+                <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-olive-soft text-olive-dark">
                   <TreePine className="size-4.5" />
                 </span>
                 <div>
@@ -290,7 +290,7 @@ export default async function HomePage() {
                 </div>
               </div>
               <div className="flex gap-3">
-                <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-olive-soft text-olive">
+                <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-olive-soft text-olive-dark">
                   <Sparkles className="size-4.5" />
                 </span>
                 <div>
@@ -309,7 +309,7 @@ export default async function HomePage() {
               </Link>
               <Link
                 href="/catalogo?categoria=mesas-de-comedor"
-                className="text-[12.5px] font-semibold text-olive underline underline-offset-4"
+                className="text-[12.5px] font-semibold text-olive-dark underline underline-offset-4"
               >
                 Ver mesas
               </Link>

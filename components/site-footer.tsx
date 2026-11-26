@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="lg:col-span-2">
           <Link href="/" aria-label="Casa Wiki" className="inline-flex">
             <Image
-              src="/casa-wiki-logo.png"
+              src="/casa-wiki-logo-azul.png"
               alt="Casa Wiki"
               width={1774}
               height={887}
@@ -21,7 +21,7 @@ export function SiteFooter() {
             Mueblería de álamo macizo con fabricación nacional. Muebles simples,
             resistentes y terminados con laca poliuretánica.
           </p>
-          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-2 text-[10.5px] font-semibold uppercase tracking-[0.1em] text-olive">
+          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-2 text-[10.5px] font-semibold uppercase tracking-[0.1em] text-olive-dark">
             <Hammer className="size-4" />
             Fabricación nacional
           </div>
@@ -32,11 +32,11 @@ export function SiteFooter() {
             Enlaces de compra
           </h3>
           <ul className="mt-4 space-y-2.5 text-[13px] text-muted">
-            <li><Link href="/catalogo" className="hover:text-olive">Colecciones actuales</Link></li>
-            <li><Link href="/catalogo?categoria=comodas" className="hover:text-olive">Cómodas</Link></li>
-            <li><Link href="/catalogo?categoria=mesas-de-comedor" className="hover:text-olive">Mesas de comedor</Link></li>
-            <li><Link href="/catalogo?categoria=escritorios" className="hover:text-olive">Escritorios</Link></li>
-            <li><Link href="/catalogo?categoria=racks" className="hover:text-olive">Racks y vajilleros</Link></li>
+            <li><Link href="/catalogo" className="hover:text-olive-dark">Colecciones actuales</Link></li>
+            <li><Link href="/catalogo?categoria=comodas" className="hover:text-olive-dark">Cómodas</Link></li>
+            <li><Link href="/catalogo?categoria=mesas-de-comedor" className="hover:text-olive-dark">Mesas de comedor</Link></li>
+            <li><Link href="/catalogo?categoria=escritorios" className="hover:text-olive-dark">Escritorios</Link></li>
+            <li><Link href="/catalogo?categoria=racks" className="hover:text-olive-dark">Racks y vajilleros</Link></li>
           </ul>
         </div>
 
@@ -45,11 +45,11 @@ export function SiteFooter() {
             Atención al cliente
           </h3>
           <ul className="mt-4 space-y-2.5 text-[13px] text-muted">
-            <li><Link href="/#manifiesto" className="hover:text-olive">Nosotros</Link></li>
-            <li><Link href="/cuenta" className="hover:text-olive">Mis pedidos</Link></li>
-            <li><a href="https://wa.me/5491145892000" className="hover:text-olive">Envíos y entregas</a></li>
-            <li><a href="https://wa.me/5491145892000" className="hover:text-olive">Cambios y devoluciones</a></li>
-            <li><a href="https://wa.me/5491145892000" className="hover:text-olive">Asesoramiento de medidas</a></li>
+            <li><Link href="/#manifiesto" className="hover:text-olive-dark">Nosotros</Link></li>
+            <li><Link href="/cuenta" className="hover:text-olive-dark">Mis pedidos</Link></li>
+            <li><a href="https://wa.me/5491145892000" className="hover:text-olive-dark">Envíos y entregas</a></li>
+            <li><a href="https://wa.me/5491145892000" className="hover:text-olive-dark">Cambios y devoluciones</a></li>
+            <li><a href="https://wa.me/5491145892000" className="hover:text-olive-dark">Asesoramiento de medidas</a></li>
           </ul>
         </div>
 
@@ -62,13 +62,13 @@ export function SiteFooter() {
           </p>
           <NewsletterForm />
           <div className="mt-5 flex items-center gap-3 text-muted">
-            <a href="https://wa.me/5491145892000" aria-label="WhatsApp" className="hover:text-olive">
+            <a href="https://wa.me/5491145892000" aria-label="WhatsApp" className="hover:text-olive-dark">
               <MessageCircle className="size-4.5" />
             </a>
-            <a href="https://instagram.com" aria-label="Instagram" className="hover:text-olive">
+            <a href="https://instagram.com" aria-label="Instagram" className="hover:text-olive-dark">
               <Instagram className="size-4.5" />
             </a>
-            <a href="mailto:hola@casawiki.com" aria-label="Email" className="hover:text-olive">
+            <a href="mailto:hola@casawiki.com" aria-label="Email" className="hover:text-olive-dark">
               <Mail className="size-4.5" />
             </a>
           </div>

@@ -53,7 +53,7 @@ export default async function IngresarPage() {
     <div className="shell py-8 md:py-12">
       <Link
         href="/"
-        className="mb-5 inline-flex items-center gap-2 text-[11.5px] text-muted hover:text-olive"
+        className="mb-5 inline-flex items-center gap-2 text-[11.5px] text-muted hover:text-olive-dark"
       >
         <ArrowLeft className="size-3.5" /> Volver a la tienda
       </Link>
@@ -67,7 +67,7 @@ export default async function IngresarPage() {
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover opacity-35"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-olive-dark/60 via-olive-dark/80 to-[#1d2c18]/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-olive-dark/60 via-olive-dark/80 to-[#0a1c33]/95" />
 
           <div className="relative z-10 flex h-full flex-col">
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 text-[9.5px] font-semibold uppercase tracking-[0.16em] backdrop-blur">
@@ -106,7 +106,7 @@ export default async function IngresarPage() {
         <div className="flex flex-col items-center justify-center px-6 py-10 md:px-12 md:py-14">
           <div className="flex flex-col items-center text-center">
             <Image
-              src="/casa-wiki-logo.png"
+              src="/casa-wiki-logo-azul.png"
               alt="Casa Wiki"
               width={1774}
               height={887}

@@ -62,7 +62,7 @@ export function ProductCard({
           type="button"
           onClick={handleAdd}
           disabled={pending || adding}
-          className="absolute bottom-3 right-3 grid size-9 place-items-center rounded-full bg-surface/95 text-ink shadow-soft backdrop-blur transition-all hover:bg-olive hover:text-white disabled:opacity-50"
+          className="absolute bottom-3 right-3 grid size-9 place-items-center rounded-full bg-surface/95 text-ink shadow-soft backdrop-blur transition-all hover:bg-olive-dark hover:text-white disabled:opacity-50"
           aria-label={`Agregar ${product.name} al carrito`}
         >
           <Plus className="size-4" />
@@ -74,7 +74,7 @@ export function ProductCard({
           {product.category}
         </p>
         <Link href={`/producto/${product.slug}`} className="mt-1 flex items-start justify-between gap-2">
-          <h3 className="font-display text-[19px] leading-snug text-ink transition-colors group-hover:text-olive">
+          <h3 className="font-display text-[19px] leading-snug text-ink transition-colors group-hover:text-olive-dark">
             {product.name}
           </h3>
           <ArrowUpRight className="mt-1 size-4 shrink-0 text-muted opacity-0 transition-opacity group-hover:opacity-100" />
@@ -94,7 +94,7 @@ export function ProductCard({
           type="button"
           onClick={handleAdd}
           disabled={pending || adding}
-          className="mt-3 inline-flex items-center justify-center gap-1.5 rounded-full border border-line bg-surface py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] transition-colors hover:border-olive hover:text-olive disabled:opacity-50"
+          className="mt-3 inline-flex items-center justify-center gap-1.5 rounded-full border border-line bg-surface py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] transition-colors hover:border-olive hover:text-olive-dark disabled:opacity-50"
         >
           <Plus className="size-3.5" />
           {adding ? 'Agregando...' : 'Agregar al carrito'}

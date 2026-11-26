@@ -115,7 +115,7 @@ export function CatalogClient({
           <SlidersHorizontal className="size-4" /> Filtros
         </p>
         {hasFilters && (
-          <button type="button" onClick={reset} className="text-[11px] text-olive underline">
+          <button type="button" onClick={reset} className="text-[11px] text-olive-dark underline">
             Limpiar
           </button>
         )}
@@ -135,7 +135,7 @@ export function CatalogClient({
                   setSelectedCategories([]);
                   setPage(1);
                 }}
-                className="accent-olive"
+                className="accent-olive-dark"
               />
               Todas las piezas
             </span>
@@ -154,7 +154,7 @@ export function CatalogClient({
                     type="checkbox"
                     checked={selectedCategories.includes(item.slug)}
                     onChange={() => toggleCategory(item.slug)}
-                    className="accent-olive"
+                    className="accent-olive-dark"
                   />
                   {item.name}
                 </span>
@@ -170,7 +170,7 @@ export function CatalogClient({
           <p className="text-[10.5px] font-semibold uppercase tracking-[0.13em] text-muted">
             Inversión máxima
           </p>
-          <span className="text-[11px] font-medium text-olive">
+          <span className="text-[11px] font-medium text-olive-dark">
             {formatPrice(maxPrice ?? priceBounds.max)}
           </span>
         </div>
@@ -184,7 +184,7 @@ export function CatalogClient({
             setMaxPrice(Number(event.target.value));
             setPage(1);
           }}
-          className="w-full accent-olive"
+          className="w-full accent-olive-dark"
         />
         <div className="mt-1 flex justify-between text-[10px] text-muted">
           <span>{formatPrice(priceBounds.min)}</span>
@@ -204,7 +204,7 @@ export function CatalogClient({
               setOnlyStock(event.target.checked);
               setPage(1);
             }}
-            className="accent-olive"
+            className="accent-olive-dark"
           />
           Entrega inmediata (en stock)
         </label>
@@ -229,9 +229,9 @@ export function CatalogClient({
   return (
     <div className="shell py-8">
       <nav className="flex items-center gap-2 text-[11px] text-muted">
-        <Link href="/" className="hover:text-olive">Inicio</Link>
+        <Link href="/" className="hover:text-olive-dark">Inicio</Link>
         <span>/</span>
-        <Link href="/catalogo" className="hover:text-olive">Catálogo</Link>
+        <Link href="/catalogo" className="hover:text-olive-dark">Catálogo</Link>
         {(collectionLabel || activeCategory) && (
           <>
             <span>/</span>
@@ -243,7 +243,7 @@ export function CatalogClient({
       </nav>
 
       <header className="mt-6 border-b border-line pb-7">
-        <p className="eyebrow text-olive">Colección 2026</p>
+        <p className="eyebrow text-olive-dark">Colección 2026</p>
         <h1 className="mt-2 font-display text-[38px] leading-tight md:text-[50px]">
           {collectionLabel
             ? `Colección ${collectionLabel}`
@@ -376,7 +376,7 @@ export function CatalogClient({
                       type="button"
                       onClick={() => add(product.variationId, 1)}
                       disabled={pending}
-                      className="absolute bottom-2.5 right-2.5 grid size-8 place-items-center rounded-full bg-surface/95 text-ink shadow-soft hover:bg-olive hover:text-white disabled:opacity-50"
+                      className="absolute bottom-2.5 right-2.5 grid size-8 place-items-center rounded-full bg-surface/95 text-ink shadow-soft hover:bg-olive-dark hover:text-white disabled:opacity-50"
                       aria-label={`Agregar ${product.name}`}
                     >
                       <Plus className="size-3.5" />
@@ -387,7 +387,7 @@ export function CatalogClient({
                       {product.category}
                     </p>
                     <Link href={`/producto/${product.slug}`}>
-                      <h2 className="mt-0.5 font-display text-[17.5px] leading-snug transition-colors group-hover:text-olive">
+                      <h2 className="mt-0.5 font-display text-[17.5px] leading-snug transition-colors group-hover:text-olive-dark">
                         {product.name}
                       </h2>
                     </Link>
@@ -402,7 +402,7 @@ export function CatalogClient({
                       type="button"
                       onClick={() => add(product.variationId, 1)}
                       disabled={pending}
-                      className="mt-2.5 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-line bg-surface py-2 text-[10px] font-semibold uppercase tracking-[0.08em] hover:border-olive hover:text-olive disabled:opacity-50"
+                      className="mt-2.5 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-line bg-surface py-2 text-[10px] font-semibold uppercase tracking-[0.08em] hover:border-olive hover:text-olive-dark disabled:opacity-50"
                     >
                       <Plus className="size-3" /> Agregar al carrito
                     </button>
@@ -430,7 +430,7 @@ export function CatalogClient({
                       {product.category}
                     </p>
                     <Link href={`/producto/${product.slug}`}>
-                      <h2 className="font-display text-[20px] leading-snug hover:text-olive">
+                      <h2 className="font-display text-[20px] leading-snug hover:text-olive-dark">
                         {product.name}
                       </h2>
                     </Link>
@@ -495,11 +495,11 @@ export function CatalogClient({
 
           <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-xl bg-surface-low p-6 md:flex-row md:items-center">
             <div className="flex items-start gap-3">
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-olive-soft text-olive">
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-olive-soft text-olive-dark">
                 <SlidersHorizontal className="size-5" />
               </span>
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-olive">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-olive-dark">
                   Servicio Casa Wiki
                 </p>
                 <p className="mt-1 font-display text-[22px] leading-snug">

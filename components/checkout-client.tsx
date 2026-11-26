@@ -85,7 +85,7 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
       <div>
         <Link
           href="/catalogo"
-          className="inline-flex items-center gap-2 text-[11.5px] text-muted hover:text-olive"
+          className="inline-flex items-center gap-2 text-[11.5px] text-muted hover:text-olive-dark"
         >
           <ArrowLeft className="size-3.5" /> Seguir explorando
         </Link>
@@ -166,7 +166,7 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
                   : 'border-line hover:border-olive/60',
               )}
             >
-              <Truck className="mt-0.5 size-5 text-olive" />
+              <Truck className="mt-0.5 size-5 text-olive-dark" />
               <span>
                 <span className="block text-[13px] font-semibold">Envío a domicilio</span>
                 <span className="mt-0.5 block text-[11px] text-muted">
@@ -184,7 +184,7 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
                   : 'border-line hover:border-olive/60',
               )}
             >
-              <Store className="mt-0.5 size-5 text-olive" />
+              <Store className="mt-0.5 size-5 text-olive-dark" />
               <span>
                 <span className="block text-[13px] font-semibold">Retiro en nuestro depósito</span>
                 <span className="mt-0.5 block text-[11px] text-muted">
@@ -234,7 +234,7 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
                   : 'border-line hover:border-olive/60',
               )}
             >
-              <MessageCircle className="mt-0.5 size-5 text-olive" />
+              <MessageCircle className="mt-0.5 size-5 text-olive-dark" />
               <span className="flex-1">
                 <span className="flex items-center justify-between gap-2">
                   <span className="text-[13px] font-semibold">
@@ -263,7 +263,7 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
                 !mpEnabled && 'cursor-not-allowed opacity-60 hover:border-line',
               )}
             >
-              <CreditCard className="mt-0.5 size-5 text-olive" />
+              <CreditCard className="mt-0.5 size-5 text-olive-dark" />
               <span className="flex-1">
                 <span className="flex items-center justify-between gap-2">
                   <span className="text-[13px] font-semibold">Tarjeta o dinero en cuenta</span>
@@ -298,7 +298,7 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
             type="checkbox"
             checked={terms}
             onChange={(event) => setTerms(event.target.checked)}
-            className="mt-0.5 accent-olive"
+            className="mt-0.5 accent-olive-dark"
           />
           Acepto los términos de compra, la política de privacidad y la coordinación de
           entrega por WhatsApp.
@@ -339,7 +339,7 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
             </div>
             <div className="flex justify-between">
               <span className="text-muted">Envío</span>
-              <span className="font-semibold text-olive">A coordinar</span>
+              <span className="font-semibold text-olive-dark">A coordinar</span>
             </div>
             {surcharge > 0 && (
               <div className="flex justify-between">
@@ -377,13 +377,13 @@ export function CheckoutClient({ defaultEmail }: { defaultEmail: string }) {
 
           <div className="mt-4 space-y-2 text-[10.5px] text-muted">
             <p className="flex items-center gap-2">
-              <ShieldCheck className="size-3.5 text-olive" /> Pago seguro SSL 256-bit
+              <ShieldCheck className="size-3.5 text-olive-dark" /> Pago seguro SSL 256-bit
             </p>
             <p className="flex items-center gap-2">
-              <Check className="size-3.5 text-olive" /> Garantía de 6 meses
+              <Check className="size-3.5 text-olive-dark" /> Garantía de 6 meses
             </p>
             <p className="flex items-center gap-2">
-              <MessageCircle className="size-3.5 text-olive" /> Seguimiento por WhatsApp
+              <MessageCircle className="size-3.5 text-olive-dark" /> Seguimiento por WhatsApp
             </p>
           </div>
         </div>

@@ -75,12 +75,12 @@ export default async function CuentaPage() {
         <section id="pedidos">
           <div className="flex items-end justify-between">
             <div>
-              <p className="eyebrow text-olive">Historial</p>
+              <p className="eyebrow text-olive-dark">Historial</p>
               <h2 className="mt-1 font-display text-[30px] leading-tight">Mis pedidos</h2>
             </div>
             <Link
               href="/catalogo"
-              className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-olive"
+              className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-olive-dark"
             >
               Seguir comprando <ArrowRight className="size-3.5" />
             </Link>
@@ -88,7 +88,7 @@ export default async function CuentaPage() {
 
           {orders.length === 0 ? (
             <div className="mt-5 rounded-2xl border border-line bg-surface px-6 py-16 text-center">
-              <span className="mx-auto grid size-14 place-items-center rounded-full bg-surface-mid text-olive">
+              <span className="mx-auto grid size-14 place-items-center rounded-full bg-surface-mid text-olive-dark">
                 <Package className="size-6" />
               </span>
               <p className="mt-4 font-display text-2xl">Todavía no hay pedidos</p>
@@ -147,7 +147,7 @@ export default async function CuentaPage() {
                       <p className="font-display text-[22px]">{formatPrice(order.total)}</p>
                       <Link
                         href={`/checkout/confirmacion/${order.id}`}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2 text-[11px] font-semibold hover:border-olive hover:text-olive"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2 text-[11px] font-semibold hover:border-olive hover:text-olive-dark"
                       >
                         Ver detalle <ArrowRight className="size-3.5" />
                       </Link>

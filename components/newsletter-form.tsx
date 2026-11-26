@@ -32,7 +32,7 @@ export function NewsletterForm() {
         {done ? '¡Gracias por suscribirte!' : 'Suscribirme'}
       </button>
       {done && (
-        <p className="mt-2 text-[11.5px] text-olive">
+        <p className="mt-2 text-[11.5px] text-olive-dark">
           Te vamos a escribir con las novedades de Casa Wiki.
         </p>
       )}

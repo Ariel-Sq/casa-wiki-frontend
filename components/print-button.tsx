@@ -7,7 +7,7 @@ export function PrintButton() {
     <button
       type="button"
       onClick={() => window.print()}
-      className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2.5 text-[11.5px] font-semibold hover:border-olive hover:text-olive"
+      className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2.5 text-[11.5px] font-semibold hover:border-olive hover:text-olive-dark"
     >
       <Printer className="size-3.5" /> Descargar resumen
     </button>

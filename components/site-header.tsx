@@ -87,7 +87,7 @@ export function SiteHeader({
 
             <Link href="/" aria-label="Casa Wiki" className="flex items-center">
               <Image
-                src="/casa-wiki-logo.png"
+                src="/casa-wiki-logo-azul.png"
                 alt="Casa Wiki"
                 width={1774}
                 height={887}
@@ -103,8 +103,8 @@ export function SiteHeader({
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'text-[13px] font-medium text-muted transition-colors hover:text-olive',
-                  pathname === item.href && 'text-olive',
+                  'text-[13px] font-medium text-muted transition-colors hover:text-olive-dark',
+                  pathname === item.href && 'text-olive-dark',
                 )}
               >
                 {item.label}
@@ -232,7 +232,7 @@ export function SiteHeader({
             <div className="flex items-center justify-between">
               <Link href="/" onClick={() => setMenuOpen(false)} aria-label="Casa Wiki">
                 <Image
-                  src="/casa-wiki-logo.png"
+                  src="/casa-wiki-logo-azul.png"
                   alt="Casa Wiki"
                   width={1774}
                   height={887}

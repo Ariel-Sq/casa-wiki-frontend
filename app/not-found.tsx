@@ -4,10 +4,10 @@ import { Leaf } from 'lucide-react';
 export default function NotFound() {
   return (
     <div className="shell flex min-h-[55vh] flex-col items-center justify-center py-20 text-center">
-      <span className="grid size-16 place-items-center rounded-full bg-olive-soft text-olive">
+      <span className="grid size-16 place-items-center rounded-full bg-olive-soft text-olive-dark">
         <Leaf className="size-7" />
       </span>
-      <p className="mt-6 eyebrow text-olive">Pieza no encontrada</p>
+      <p className="mt-6 eyebrow text-olive-dark">Pieza no encontrada</p>
       <h1 className="mt-2 font-display text-[40px] leading-tight">
         Esta página se fue al taller
       </h1>

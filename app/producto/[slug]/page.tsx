@@ -81,14 +81,14 @@ export default async function ProductPage({
         <section className="shell pb-10">
           <div className="flex items-end justify-between border-t border-line pt-10">
             <div>
-              <p className="eyebrow text-olive">Completá tu espacio</p>
+              <p className="eyebrow text-olive-dark">Completá tu espacio</p>
               <h2 className="mt-2 font-display text-[30px] leading-tight md:text-[36px]">
                 Piezas que dialogan entre sí
               </h2>
             </div>
             <Link
               href={`/catalogo?categoria=${product.categorySlug}`}
-              className="text-[12px] font-semibold text-olive underline underline-offset-4"
+              className="text-[12px] font-semibold text-olive-dark underline underline-offset-4"
             >
               Ver colección
             </Link>

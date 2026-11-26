@@ -71,11 +71,11 @@ export function ProductDetail({ product }: { product: ProductView }) {
   return (
     <div className="shell py-7">
       <nav className="flex flex-wrap items-center gap-2 text-[11px] text-muted">
-        <Link href="/" className="hover:text-olive">Inicio</Link>
+        <Link href="/" className="hover:text-olive-dark">Inicio</Link>
         <span>/</span>
-        <Link href="/catalogo" className="hover:text-olive">Catálogo</Link>
+        <Link href="/catalogo" className="hover:text-olive-dark">Catálogo</Link>
         <span>/</span>
-        <Link href={`/catalogo?categoria=${product.categorySlug}`} className="hover:text-olive">
+        <Link href={`/catalogo?categoria=${product.categorySlug}`} className="hover:text-olive-dark">
           {product.category}
         </Link>
         <span>/</span>
@@ -125,7 +125,7 @@ export function ProductDetail({ product }: { product: ProductView }) {
         </div>
 
         <div className="lg:pt-2">
-          <p className="eyebrow text-olive">{product.category}</p>
+          <p className="eyebrow text-olive-dark">{product.category}</p>
           <h1 className="mt-2 font-display text-[36px] leading-[1.08] tracking-tight md:text-[44px]">
             {product.name}
           </h1>
@@ -158,7 +158,7 @@ export function ProductDetail({ product }: { product: ProductView }) {
             <button
               type="button"
               onClick={() => setExpanded((value) => !value)}
-              className="mt-1 text-[11.5px] font-semibold text-olive underline underline-offset-4"
+              className="mt-1 text-[11.5px] font-semibold text-olive-dark underline underline-offset-4"
             >
               {expanded ? 'Leer menos' : 'Leer más'}
             </button>
@@ -264,7 +264,7 @@ export function ProductDetail({ product }: { product: ProductView }) {
               { icon: ShieldCheck, label: 'Garantía 6 meses' },
             ].map((item) => (
               <div key={item.label} className="flex flex-col items-center gap-1.5">
-                <item.icon className="size-5 text-olive" />
+                <item.icon className="size-5 text-olive-dark" />
                 <span className="text-[10px] font-medium text-muted">{item.label}</span>
               </div>
             ))}

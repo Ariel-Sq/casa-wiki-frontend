@@ -31,10 +31,10 @@ export function CartDrawer() {
         aria-label="Cerrar carrito"
       />
 
-      <aside className="animate-drawer absolute inset-y-0 right-0 flex w-full max-w-[460px] flex-col bg-[#fbfaf7] shadow-lift">
+      <aside className="animate-drawer absolute inset-y-0 right-0 flex w-full max-w-[460px] flex-col bg-[#fbfdff] shadow-lift">
         <div className="flex items-start justify-between border-b border-line px-6 py-5">
           <div className="flex items-center gap-3">
-            <span className="grid size-11 place-items-center rounded-full bg-olive-soft text-olive">
+            <span className="grid size-11 place-items-center rounded-full bg-olive-soft text-olive-dark">
               <ShoppingBag className="size-5" />
             </span>
             <div>
@@ -65,7 +65,7 @@ export function CartDrawer() {
 
           {cart.items.length === 0 ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 py-16 text-center">
-              <span className="grid size-16 place-items-center rounded-full bg-surface-mid text-olive">
+              <span className="grid size-16 place-items-center rounded-full bg-surface-mid text-olive-dark">
                 <ShoppingBag className="size-7" />
               </span>
               <p className="font-display text-2xl">Tu carrito está vacío</p>
@@ -163,7 +163,7 @@ export function CartDrawer() {
               </div>
               <div className="flex justify-between">
                 <span className="text-muted">Envío especial a domicilio</span>
-                <span className="font-semibold text-olive">A coordinar</span>
+                <span className="font-semibold text-olive-dark">A coordinar</span>
               </div>
             </div>
 

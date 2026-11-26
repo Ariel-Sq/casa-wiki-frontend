@@ -88,7 +88,7 @@ export default async function ConfirmationPage({
           </p>
         </div>
         <div className="flex items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3">
-          <span className="grid size-9 place-items-center rounded-full bg-olive-pale text-olive">
+          <span className="grid size-9 place-items-center rounded-full bg-olive-pale text-olive-dark">
             <Mail className="size-4" />
           </span>
           <div>
@@ -106,7 +106,7 @@ export default async function ConfirmationPage({
             <MessageCircle className="size-5" />
           </span>
           <div>
-            <p className="text-[9.5px] font-semibold uppercase tracking-[0.16em] text-olive">
+            <p className="text-[9.5px] font-semibold uppercase tracking-[0.16em] text-olive-dark">
               Atención personalizada de Casa Wiki · Respuesta inmediata
             </p>
             <h2 className="mt-1 max-w-xl font-display text-[26px] leading-tight md:text-[30px]">
@@ -220,11 +220,11 @@ export default async function ConfirmationPage({
             </div>
             <div className="flex justify-between">
               <span className="text-muted">Envío especializado</span>
-              <span className="font-semibold text-olive">A coordinar</span>
+              <span className="font-semibold text-olive-dark">A coordinar</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted">Servicio de montaje</span>
-              <span className="text-olive">A coordinar</span>
+              <span className="text-olive-dark">A coordinar</span>
             </div>
             <div className="flex items-end justify-between border-t border-line pt-2">
               <span className="text-[13px] font-semibold">Total</span>
@@ -238,7 +238,7 @@ export default async function ConfirmationPage({
         <div className="space-y-4">
           <section className="rounded-2xl border border-line bg-surface p-6">
             <h2 className="flex items-center gap-2 font-display text-[22px]">
-              <Truck className="size-5 text-olive" /> Datos de entrega
+              <Truck className="size-5 text-olive-dark" /> Datos de entrega
             </h2>
             <p className="mt-1 text-[10.5px] text-muted">
               Información registrada para coordinar la logística.

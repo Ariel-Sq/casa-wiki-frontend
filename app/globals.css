@@ -1,20 +1,20 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-background: #faf9f6;
+  --color-background: #f8fbfe;
   --color-surface: #ffffff;
-  --color-surface-low: #f4f3f0;
-  --color-surface-mid: #efeeeb;
-  --color-line: #e3e2e0;
-  --color-ink: #1a1c1a;
-  --color-muted: #5d6358;
-  --color-olive: #48663e;
-  --color-olive-dark: #2f4529;
-  --color-olive-soft: #d4e8d3;
-  --color-olive-pale: #eaf2e7;
-  --color-clay: #ca7f57;
-  --color-terracotta: #8e4d2a;
-  --color-cream: #f6f1e7;
+  --color-surface-low: #f1f6fb;
+  --color-surface-mid: #e6eef6;
+  --color-line: #d9e4ef;
+  --color-ink: #10243f;
+  --color-muted: #5b6d82;
+  --color-olive: #72b4e0;
+  --color-olive-dark: #133c72;
+  --color-olive-soft: #d9ecf9;
+  --color-olive-pale: #edf7fd;
+  --color-clay: #2f6fa8;
+  --color-terracotta: #133c72;
+  --color-cream: #eaf3fa;
 
   --font-display: var(--font-playfair), Georgia, 'Times New Roman', serif;
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
@@ -22,8 +22,8 @@
   --radius-card: 1rem;
   --radius-pill: 9999px;
 
-  --shadow-soft: 0 1px 2px rgba(26, 28, 26, 0.04), 0 12px 32px -18px rgba(26, 28, 26, 0.25);
-  --shadow-lift: 0 2px 4px rgba(26, 28, 26, 0.05), 0 24px 48px -24px rgba(26, 28, 26, 0.35);
+  --shadow-soft: 0 1px 2px rgba(16, 36, 63, 0.04), 0 12px 32px -18px rgba(16, 36, 63, 0.22);
+  --shadow-lift: 0 2px 4px rgba(16, 36, 63, 0.05), 0 24px 48px -24px rgba(16, 36, 63, 0.3);
 }
 
 @layer base {
@@ -103,11 +103,12 @@
 
   .btn-primary {
     background: var(--color-olive);
-    color: #fff;
+    color: var(--color-olive-dark);
   }
 
   .btn-primary:hover {
     background: var(--color-olive-dark);
+    color: #fff;
   }
 
   .btn-outline {
@@ -117,8 +118,8 @@
   }
 
   .btn-outline:hover {
-    border-color: var(--color-olive);
-    color: var(--color-olive);
+    border-color: var(--color-olive-dark);
+    color: var(--color-olive-dark);
   }
 
   .field {
@@ -134,11 +135,11 @@
   }
 
   .field::placeholder {
-    color: #8b9086;
+    color: #7b8ba0;
   }
 
   .field:focus {
-    border-color: var(--color-olive);
+    border-color: var(--color-olive-dark);
     background: #fff;
   }
 
@@ -154,6 +155,13 @@
 
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+}
+
+@layer utilities {
+  /* Celeste surfaces always carry navy text for contrast. */
+  .bg-olive.text-white {
+    color: var(--color-olive-dark);
   }
 }
 

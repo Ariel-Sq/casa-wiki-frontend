@@ -1,6 +1,6 @@
 # Casa Wiki
 
-Storefront de mobiliario artesanal construido con **Next.js 15 (App Router)**, React 19 y Tailwind 4. Consume la API propia de Casa Wiki (NestJS + PostgreSQL, código basado en `legas-backend`) y tiene identidad visual propia: paleta crema/oliva/terracota, tipografía editorial (Playfair Display + Plus Jakarta Sans) y flujo de compra coordinado por WhatsApp.
+Storefront de mobiliario artesanal construido con **Next.js 15 (App Router)**, React 19 y Tailwind 4. Consume la API propia de Casa Wiki (NestJS + PostgreSQL, código basado en `legas-backend`) y tiene identidad visual propia: paleta celeste/azul marino, tipografía editorial (Playfair Display + Plus Jakarta Sans) y flujo de compra coordinado por WhatsApp.
 
 Diseño basado en el proyecto Stitch *Casa Wiki Furniture Ecommerce* (pantallas de Inicio & Colecciones, Catálogo, Producto & Carrito, Login & Club y Checkout & Confirmación).
 
